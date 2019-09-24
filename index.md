@@ -7,4 +7,7 @@ Mangroves are important coastal ecosystem that support coastal communities. Howe
 The method used was to download Landsat imageries of the island from 4 different years and then train the images for classification using the maximum likelihood algorithm. The approach of the project is similar to a remote sensing project that I did 2 years ago: **mapping the shrinking lakes of Wuhan city**. Yet, unlike my project which uses ArcMap throughout the project, the project used an open source GIS software ILWIS for image processing and ArcGIS only for the final preparation of the final map. The project also did accuracy assessment of the classification of imageries and the generation of spatial extent maps. I find the fact that the researchers use an open source GIS software over commercial ones to be interesting. The open source softwares are often cheaper to use and incredibly useful for collaboration. These softwares also allow for better customization and sometimes better functioning softwares. Nevertheless, I feel that for this project, using either conventional or open source GIS softwares may produce similar results. The researchers mentioned that these open source softwares are good substitue for the conventional GIS softwares, but did not say how so for their project.
 
 ### [Week1 Lab](qgisModel.md): My first QGIS Model
-In the lab, I created a model to calculate the direction and distance from a point. 
+In the lab, I created a model to calculate the direction and distance from a point. Click to learn more. 
+
+### [Week2 lab](qgisModel.md): QGIS Modeling (Continuing)
+This week, I updated the QGIS model that I worked on last week. With the model, I downloaded data from Puerto Rico and did an analysis using the model that I made. Click to learn more. 
