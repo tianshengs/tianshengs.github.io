@@ -12,5 +12,5 @@ I created a model to calculate the direction and distance from a point in QGIS. 
 ### [Week2 lab](qgisModel.md): QGIS Modeling (Continuing)
 I updated the QGIS model that I worked on last week. With the model, I downloaded data from Puerto Rico and did an analysis using the model that I made. Click to learn more. 
 
-### [Week3 Lab]:Global Digital Elevation Models
+### [Week3 Lab](globalDigitalElevation.md):Global Digital Elevation Models
 I used SAGA software to derive the channel networks of the Mt. Kilimanjaro region. 
