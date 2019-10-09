@@ -92,5 +92,5 @@ Both Aster and SRTM data seem to mass up when there is a water body, for example
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 
 #### Flow accumulation
-From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more accurate when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
+From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
 
