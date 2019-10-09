@@ -76,6 +76,7 @@ the grid difference between the elevation model of ASTER from that of SRTM, and 
 I tried to use QGIS to help visualize some potential errors that we may encounter. 
 #### Elevation
 Both Aster and SRTM data seem to be more accurate at higher elevation than at lower elevation. Moreover, ASTER seem to give a more detailed and comprehensive data at lower elevation. 
+
 **High elevation**
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
 
