@@ -22,8 +22,8 @@ between data sources by telling us the sources of information for each location.
 
 All data are dowloaded from [earth data](https://earthdata.nasa.gov/).
 
-### Software used
-The softwares used for the project are SAGA 6.2 for hydrology analysis.
+### Software
+The softwares used for the project are SAGA 6.2 and QGIS 3.8.
 
 ### Creating SAGA grid files for the .NUM files
 In order to use the .NUM files in SAGA, we can use this supporting [python file](SAGA_supporting_files/srtmNUMtoSAGA.py) to create 
