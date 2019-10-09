@@ -15,5 +15,5 @@ I updated the QGIS model that I worked on last week. With the model, I downloade
 ### [Week3 Lab](globalDigitalElevation.md): Global Digital Elevation Models
 I used SAGA software to derive the channel networks of the Mt. Kilimanjaro region using SRTM data. 
 
-### [Week4 Lab](globalDigitalElevation.md): Global Digital Elevation Models (Automation, Error Propogation and Uncertainty)
+### [Week4 Lab](ModelErrorPropagation.md): Global Digital Elevation Models (Automation, Error Propogation and Uncertainty)
 I used batch processing algorithms for SAGA tools to automate the processing tasks to calculate the channel networks of Bali and Lombok Islands, Indonesia, with a focus in understanding sources of errors and comparing elevation models and their resulting hydrological models from two different data sources (Aster and SRTM).
