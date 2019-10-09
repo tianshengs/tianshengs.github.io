@@ -75,7 +75,7 @@ the grid difference between the elevation model of ASTER from that of SRTM, and 
 ### Visualizing potential errors
 I tried to use QGIS to help visualize some potential errors that we may encounter. 
 #### Elevation
-Both Aster and SRTM data seem to be more accurate at higher elevation than at lower elevation. Moreover, ASTER data seem to give a more detailed and comprehensive data at lower elevation. 
+Both Aster and SRTM data seem to be more accurate at higher elevation than at lower elevation. Moreover, ASTER seem to give a more detailed and comprehensive data at lower elevation. 
 **High elevation**
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
 
@@ -86,5 +86,5 @@ Both Aster and SRTM data seem to be more accurate at higher elevation than at lo
 Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. 
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 #### Flow accumulation
-Both Aster and SRTM data seem to be more accurate and line up more when the flow accumulation is small. 
+Both Aster and SRTM data seem to be more accurate when the flow accumulation is small. 
 
