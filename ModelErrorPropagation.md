@@ -77,8 +77,9 @@ the grid difference between the elevation model of ASTER from that of SRTM, and 
 
 ### Visualizing potential errors
 I tried to use QGIS to help visualize the potential errors that I may encounter. 
-#### 
-According to the elevation model grid difference, Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat land. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
+
+#### elevation/steepness
+According to the elevation model grid difference and QGIS visualization, Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat land. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
 
 **Steep/High elevation region**
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
@@ -91,5 +92,5 @@ Both Aster and SRTM data seem to mass up when there is a water body, for example
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 
 #### Flow accumulation
-From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more accurate when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as the flows accumulate.
+From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more accurate when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
 
