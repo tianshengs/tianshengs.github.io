@@ -88,7 +88,7 @@ Aster and SRTM data seem to be more consistent at higher elevation and steeper l
 ![Low elevation](https://user-images.githubusercontent.com/25497706/66488457-ebd51c80-ea7b-11e9-9ab7-1cf80355f151.png)
 
 #### Water body
-Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land. The program encountered here may be related to the problem that I had earlier with the ocean. For hydrology analysis, therefore, it may be best to identify these lake regions and convert them to nodata. Additionaly, the strange straight line pattern as seen across the crater lake may also be caused by the resampling code that I chose to use, which in this caseis bilinear interpolation. 
+Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land. The program encountered here may be related to the problem that I had earlier with the ocean. For hydrology analysis, therefore, it may be best to identify these lake regions and convert them to nodata. Additionaly, the strange straight line pattern as seen across the crater lake may also be caused by the resampling code that I chose to use, which in this case is bilinear interpolation. 
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 
 #### Flow accumulation
