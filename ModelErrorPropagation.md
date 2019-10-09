@@ -1,6 +1,6 @@
-# Global Digital Elevation Models, Model error Propagation and uncertainty
+# Global Digital Elevation Models, model error propagation and uncertainty
 This is a continuation of the [Kilimanjaro project](globalDigitalElevation.md). For the Kilimanjaro project, I showed the steps 
-needed to model hydrology and channel networks of the Mt. Kilimanjaro in northern Tanzania in SAGA using SRTM data. 
+needed to model hydrology and channel networks of the Mt.Kilimanjaro in northern Tanzania in SAGA using SRTM data. 
 
 This week, I plan to model the hydrology and channel networks of **Bali and Lombok** islands, Indonesia. In this project,
 I plan to delve deeper into:
@@ -21,6 +21,9 @@ Besides the DEM models, I am also going to use the .NUM files for these DEM data
 between data sources by telling us the sources of information for each location.
 
 All data are dowloaded from [earth data](https://earthdata.nasa.gov/).
+
+### Software used
+The softwares used for the project are SAGA 6.2 for hydrology analysis.
 
 ### Creating SAGA grid files for the .NUM files
 In order to use the .NUM files in SAGA, we can use this supporting [python file](SAGA_supporting_files/srtmNUMtoSAGA.py) to create 
@@ -73,19 +76,20 @@ the grid difference between the elevation model of ASTER from that of SRTM, and 
 ![ASTER_3D](https://user-images.githubusercontent.com/25497706/66452444-77c05780-ea2e-11e9-9005-f504dc5e618d.png)
 
 ### Visualizing potential errors
-I tried to use QGIS to help visualize some potential errors that we may encounter. 
-#### Elevation
-Both Aster and SRTM data seem to be more accurate at higher elevation than at lower elevation. Moreover, ASTER seem to give a more detailed and comprehensive data at lower elevation. 
+I tried to use QGIS to help visualize the potential errors that I may encounter. 
+#### 
+According to the elevation model grid difference, Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat land. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
 
-**High elevation**
+**Steep/High elevation region**
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
 
-**Low elevation**
+**Flat/Low elevation**
 ![Low elevation](https://user-images.githubusercontent.com/25497706/66488457-ebd51c80-ea7b-11e9-9ab7-1cf80355f151.png)
 
 #### Water body
-Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. 
+Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land. The program encountered here may be related to the problem that I had earlier with the ocean. For hydrology analysis, therefore, it may be best to identify these lake regions and convert them to nodata. Additionaly, the strange straight line pattern as seen across the crater lake may also be caused by the resampling code that I chose to use, which in this caseis bilinear interpolation. 
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
+
 #### Flow accumulation
-Both Aster and SRTM data seem to be more accurate when the flow accumulation is small. 
+From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more accurate when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as the flows accumulate.
 
