@@ -94,3 +94,5 @@ Both Aster and SRTM data seem to mass up when there is a water body, for example
 #### Flow accumulation
 From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
 
+#### [Back to Main Page](index.md)
+
