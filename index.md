@@ -6,14 +6,15 @@ Mangroves are important coastal ecosystem that support coastal communities. Howe
 
 The method used was to download Landsat imageries of the island from 4 different years and then train the images for classification using the maximum likelihood algorithm. The approach of the project is similar to a remote sensing project that I did 2 years ago: **mapping the shrinking lakes of Wuhan city**. Yet, unlike my project which uses ArcMap throughout the project, the project used an open source GIS software ILWIS for image processing and ArcGIS only for the final preparation of the final map. The project also did accuracy assessment of the classification of imageries and the generation of spatial extent maps. I find the fact that the researchers use an open source GIS software over commercial ones to be interesting. The open source softwares are often cheaper to use and incredibly useful for collaboration. These softwares also allow for better customization and sometimes better functioning softwares. Nevertheless, I feel that for this project, using either conventional or open source GIS softwares may produce similar results. The researchers mentioned that these open source softwares are good substitue for the conventional GIS softwares, but did not say how so for their project.
 
-### [Week1 Lab](qgisModel.md): My first QGIS Model
-I created a model to calculate the direction and distance from a point in QGIS. Click to learn more. 
+### [Activity 1](qgisModel.md): QGIS Modeling
+I created a model to calculate the direction and distance from a point in QGIS. With the model, I downloaded data from Puerto Rico and did an analysis using the model that I made. Click to learn more. 
 
-### [Week2 lab](qgisModel.md): QGIS Modeling (Continuing)
-I updated the QGIS model that I worked on last week. With the model, I downloaded data from Puerto Rico and did an analysis using the model that I made. Click to learn more. 
+### Activity 2
+### [Phase 1](globalDigitalElevation.md): Global Digital Elevation Models
+Phase 1I used SAGA software to derive the channel networks of the Mt. Kilimanjaro region using SRTM data. 
 
-### [Week3 Lab](globalDigitalElevation.md): Global Digital Elevation Models
-I used SAGA software to derive the channel networks of the Mt. Kilimanjaro region using SRTM data. 
-
-### [Week4 Lab](ModelErrorPropagation.md): Global Digital Elevation Models (Automation, Error Propogation and Uncertainty)
+### [Phase 2](ModelErrorPropagation.md): Global Digital Elevation Models (Automation, Error Propogation and Uncertainty)
 I used batch processing algorithms for SAGA tools to automate the processing tasks to calculate the channel networks of Bali and Lombok Islands, Indonesia, with a focus in understanding sources of errors and comparing elevation models and their resulting hydrological models from two different data sources (Aster and SRTM).
+
+### Activity 3
+I used data from OpenStreetMap and Resilience Academy to understand urban resilience in Dar es Salaam, Tanzania. Specifically, I plan to look at the hotel distribution in Dar es Salaam's subwards, and the number of restaurants that are within 500 meters from each hotel.  I implemented my solution in PostGIS in QGIS.
