@@ -1,4 +1,4 @@
-# Hotel distribution and its accessibility to restaurants in Dar es Salaam
+# Hotel distribution and its accessibility to restaurants in Dar es Salaam, Tanzania
 **Hamjambo!**
 As the largest city in Tanzania, Dar es Salaam is one of the most dynamic cities in East Africa. Although it is not particularly famous for
 tourism, it still attracts people to the city who either do business here or use it as a jumping board to famous tourist attractions all over
