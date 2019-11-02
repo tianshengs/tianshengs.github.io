@@ -1,5 +1,5 @@
 # Open source GIS 
-### FOSS4 Conference 2018 article review
+## FOSS4 Conference 2018 article review
 Here is my review of an article that uses opensource GIS analysis tools.
 
 ## [Activity 1](qgisModel.md): QGIS Modeling
