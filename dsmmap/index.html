@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/subward_detail_1.js"></script>
+        <script src="data/restaurant_accessibility_2.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:19, minZoom:6
+        }).fitBounds([[-7.261108536299313,38.786723223345504],[-6.5317650626950545,39.650805851566155]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://tianshengs.github.io/">Map made by Tiansheng Sun</a> | <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" target="_blank" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org" target="_blank">QGIS</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            map.setMaxBounds(map.getBounds());
+        }
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 6,
+            maxZoom: 19,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_subward_detail_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + "subward_id: " + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "number_of_hotels: " + (feature.properties['count'] !== null ? Autolinker.link(String(feature.properties['count'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "area_of_subward: " + (feature.properties['area'] !== null ? Autolinker.link(String(feature.properties['area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "hotel_density: " + (feature.properties['hotel_density'] !== null ? Autolinker.link(String(feature.properties['hotel_density'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_subward_detail_1_0(feature) {
+            if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 0.000000 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 1.648800 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,191,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['hotel_density'] >= 1.648800 && feature.properties['hotel_density'] <= 3.258300 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,128,128,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['hotel_density'] >= 3.258300 && feature.properties['hotel_density'] <= 5.137300 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,64,64,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['hotel_density'] >= 5.137300 && feature.properties['hotel_density'] <= 9.152850 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_subward_detail_1');
+        map.getPane('pane_subward_detail_1').style.zIndex = 401;
+        map.getPane('pane_subward_detail_1').style['mix-blend-mode'] = 'normal';
+        var layer_subward_detail_1 = new L.geoJson(json_subward_detail_1, {
+            attribution: '<a href="https://geonode.resilienceacademy.ac.tz/" target="_blank">Resilience Academy</a>',
+            interactive: true,
+            dataVar: 'json_subward_detail_1',
+            layerName: 'layer_subward_detail_1',
+            pane: 'pane_subward_detail_1',
+            onEachFeature: pop_subward_detail_1,
+            style: style_subward_detail_1_0,
+        });
+        bounds_group.addLayer(layer_subward_detail_1);
+        map.addLayer(layer_subward_detail_1);
+        function pop_restaurant_accessibility_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + "restaurant_within_500_meters: " + (feature.properties['sum'] !== null ? Autolinker.link(String(feature.properties['sum'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_restaurant_accessibility_2_0(feature) {
+            if (feature.properties['sum'] >= 0.000000 && feature.properties['sum'] <= 0.000000 ) {
+                return {
+                pane: 'pane_restaurant_accessibility_2',
+                radius: 2.0,
+                opacity: 0.8,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,248,251,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['sum'] >= 0.000000 && feature.properties['sum'] <= 5.000000 ) {
+                return {
+                pane: 'pane_restaurant_accessibility_2',
+                radius: 4.0,
+                opacity: 0.8,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(166,187,218,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['sum'] >= 5.000000 && feature.properties['sum'] <= 15.000000 ) {
+                return {
+                pane: 'pane_restaurant_accessibility_2',
+                radius: 6.0,
+                opacity: 0.8,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(137,107,178,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['sum'] >= 15.000000 && feature.properties['sum'] <= 28.000000 ) {
+                return {
+                pane: 'pane_restaurant_accessibility_2',
+                radius: 8.0,
+                opacity: 0.8,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,15,124,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_restaurant_accessibility_2');
+        map.getPane('pane_restaurant_accessibility_2').style.zIndex = 402;
+        map.getPane('pane_restaurant_accessibility_2').style['mix-blend-mode'] = 'normal';
+        var layer_restaurant_accessibility_2 = new L.geoJson(json_restaurant_accessibility_2, {
+            attribution: '<a href="https://www.openstreetmap.org" target="_blank">Openstreetmap</a>',
+            interactive: true,
+            dataVar: 'json_restaurant_accessibility_2',
+            layerName: 'layer_restaurant_accessibility_2',
+            pane: 'pane_restaurant_accessibility_2',
+            onEachFeature: pop_restaurant_accessibility_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_restaurant_accessibility_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_restaurant_accessibility_2);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'restaurant_accessibility<br /><table><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_00000700000.png" /></td><td>0.0000 - 7.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_700001400001.png" /></td><td>7.0000 - 14.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_1400002100002.png" /></td><td>14.0000 - 21.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_2100002800003.png" /></td><td>21.0000 - 28.0000</td></tr></table>': layer_restaurant_accessibility_2,'subward_detail<br /><table><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0000000.png" /></td><td>0.00 - 0.00</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0001651.png" /></td><td>0.00 - 1.65</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_1653262.png" /></td><td>1.65 - 3.26</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_3265143.png" /></td><td>3.26 - 5.14</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_5149154.png" /></td><td>5.14 - 9.15</td></tr></table>': layer_subward_detail_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        setBounds();
+		L.control.scale({imperial:false, metric:true}).addTo(map);
+        </script>
+    </body>
+</html>
