@@ -1,3 +1,4 @@
+### Assignment 1: FOSS4 Conference 2018 article review
 #### Article: [Mayunga, J.S., Uhinga, G.A.(2018). _Mapping spatiotemporal distribution of mangroves in Mafia Island in Tanzania using Landsat Imagery_](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-4-W8/133/2018/isprs-archives-XLII-4-W8-133-2018.pdf)
 
 Mangroves are important coastal ecosystem that support coastal communities. However, mangroves are under threat in many part of the world, 
