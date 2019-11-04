@@ -28,6 +28,7 @@ CREATE TABLE HotelInDar AS
 SELECT osm_id, way, tourism
 FROM planet_osm_point as a
 where a.tourism = 'hotel' OR a.tourism = 'guest_house'
+
 /* add a column to hotelindar */
 ALTER TABLE hotelindar ADD COLUMN fid float8
 
