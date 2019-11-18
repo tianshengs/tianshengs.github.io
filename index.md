@@ -4,7 +4,7 @@
 ### [FOSS4 Conference 2018 article review](literature_review.md)
 Here is my review of an article that uses opensource GIS analysis tools.
 
-### [Using Face Recognition with Twitter Data for the Study of International Migration]
+### [Using Face Recognition with Twitter Data for the Study of International Migration](twitter_article.md)
 Here is my review of a paper that uses twitter data for geographical analysis.
 
 ## [Activity 1](qgisModel.md): QGIS Modeling
