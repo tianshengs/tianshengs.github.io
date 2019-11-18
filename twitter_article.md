@@ -21,7 +21,7 @@ The first step involves gaining social network platform agreement and the instal
 the analysis, as we call libraries (Step 2) and connect to twitter API (step 3). Steps 4 and 5 represent the raw collection of information,
 as the author collected RO_located users (Step 4) and RO_speaker users (Step 5). After that, we merge data sets (Step 6), check current database (Step 7), add last status (Step 8) and add geo-located tweets (Step 9), all of which facilitate the increase of usage effectiveness. In the 10th step, the authors leveraged the 
 face-recognition algorithm to estimate demographic details of the Twitter users. Once we get the result, we finally update the information into the existing
-database.
+database (Step 11).
 
 ### Data Analysis
 The authors provides detailed information and code of some steps of data analysis. First of all, as the first step, the authors loaded three libraries:
@@ -51,5 +51,4 @@ to a foreign country within in one month. Looking at the migration of these Twit
 migration can be developed and mobility trends can be identified long before any official documents.
 
 ### Replicability and reproducability
-Although the authors provided a very detailed information about how they selected data, I think it may be hard to completely reproduce their result given that the face recognition technology may prouce slightly different 
-results each time.Yet, I think that the research is highly replicable. We can easily use the same method to do some research of, for example, Chinese or Tanzanian twitter users, and  
+Although the authors provided a very detailed information about how they selected data, I think it may be hard to completely reproduce their result given that the face recognition technology may prouce slightly different results each time.Yet, I think that the research is highly replicable. We can easily use the same method to do some research of, for example, Chinese or Tanzanian twitter users, and get some demographic information of the twitter users.
