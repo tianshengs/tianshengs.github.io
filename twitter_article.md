@@ -3,12 +3,11 @@
 #### Article: [Florea, A. and Roman, M. (2018). Using Face Recognition with Twitter Data for the Study of International Migration. *Informatica Economică, 22, 4*](http://revistaie.ase.ro/content/88/03%20-%20florea,%20roman.pdf)
 
 ### Overview
-The article presented a technique that collect and analyze Twitter data and use face recogination technology to predict active
-Twitter users' demographics such as age, gender and race. Further more, twitter data can be used to understand the mobility of Twitter users' potential
-mobility by examining the change of permenant address, which provides insight into global migration.
+The article presented a technique that collect and analyze Twitter data and use face recognition technology to predict active
+Twitter users' demographics such as age, gender and race. Further more, twitter data can be used to understand the mobility of Twitter users' potential mobility by examining the change of permenant address, which provides insight into global migration.
 
 The approach of the paper is deductive. The authors first talk about the migration patterns of Romania as an introductsion to the topic, and then
-provides literary rreviews of how Twitter data has been used to understand international migration. Then, the authors talk about the new technologies
+provides literature reviews of how Twitter data has been used to understand international migration. Then, the authors talk about the new technologies
 for migration research, specifically R, Social Media data and face recognition, and finally use the Twitter data of Romanian users as an example of how 
 these technologies can be useful in final research of global migration. In the end, the author shares how the topic can be further explored in the future.
 
@@ -36,7 +35,7 @@ library(data.table)
 After setting up RO script, the authors collected the coordinates of the biggest 150 cities of Romania. With the coordinates, the authors searched for the top 100,000 tweets in Romania since 2018/01/01, with a 20km buffer from the city
 center of each city which covers the whole of Romania. 
 
-After the process of data cleaning, the authors ran the code that calls facerec to analyze profile images of Twitter users. However, if the user does not include a profile picture, then the algorithm will generate and take the value "not face detected”.
+After the process of data cleaning, the authors ran the code that calls #facerec# to analyze profile images of Twitter users. However, if the user does not include a profile picture, then the algorithm will generate and take the value "not face detected”.
 
 Finally, the authors briefly talked about how exmaning the change of permenant address can provide insight into global migration. Specifically, the author reported
 the percentage change of permenant location in Romania that has changed the country location.
@@ -51,4 +50,4 @@ to a foreign country within in one month. Looking at the migration of these Twit
 migration can be developed and mobility trends can be identified long before any official documents.
 
 ### Replicability and reproducability
-Although the authors provided a very detailed information about how they selected data, I think it may be hard to completely reproduce their result given that the face recognition technology may prouce slightly different results each time.Yet, I think that the research is highly replicable. We can easily use the same method to do some research of, for example, Chinese or Tanzanian twitter users, and get some demographic information of the twitter users.
+Although the authors provided a very detailed information about how they selected data, I think it may be hard to completely reproduce their result given that the face recognition technology may prouce slightly different results each time.Yet, I think that the research can be replicable. We can easily use the same method to do some research of, for example, Chinese or Tanzanian twitter users, and get some demographic information of the twitter users.
