@@ -14,7 +14,7 @@ Data is collected from multiple sources:
 ### Reference article 
 The analysis for activity is based on the following reference article: 
 
-Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: 
+Malcomb, D. W., Weaver, E. A., and Krakowka. A. R. (2014). Vulnerability modeling for sub-Saharan Africa: 
 An operationalized approach in Malawi. *Applied Geography, 48:17-30.*
 
 ### Methodology
@@ -29,7 +29,7 @@ The shapefile layer with the calculated Adaptive Capacity score has an extent la
 
 Before I added all the scores together, I used the r.Quantile and r.Recode algorithms in QGIS to reclassify the drought layer to a scale of 1 to 5. I also used raster calculator to change the classification of the flood layer from 0-4 to 1-5. Finally, I used raster calculator to combine the final results into the final vulnerability map. Because a high score for capacity correlates to a low vulnerability, I inverted the score by subtracting it from its maximum possible score 2 (40% of 5).
 
-### Results
+### Result
 ![malawi_vulnerability_result](https://user-images.githubusercontent.com/25497706/69486831-160d4e80-0e1e-11ea-865c-f45c94e6de52.png)
 
 ### Discussion
