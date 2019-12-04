@@ -26,13 +26,13 @@ All data are dowloaded from [earth data](https://earthdata.nasa.gov/).
 The softwares used for the project are SAGA 6.2 and QGIS 3.8.
 
 ### Creating SAGA grid files for the .NUM files
-In order to use the .NUM files in SAGA, we can use this supporting [python file](SAGA_supporting_files/srtmNUMtoSAGA.py) to create 
+In order to use the .NUM files in SAGA, we can use this supporting [python file](../SAGA_supporting_files/srtmNUMtoSAGA.py) to create 
 a set of SAGA grid files. The python file imports a binary file as a SAGA grid, assigns the WGS 1984 geographic coordinate system to
 the grid and mirrors the grid. 
 
 ### Batch scripts
 A bat file is a batch processing file that can run a series of commands in Window's command shell. Since each SAGA tool can be run as a
-command, I wrote a [bat script file](SAGA_supporting_files/Steps.bat) that processes all the relevant SAGA tools needed for hydrology and
+command, I wrote a [bat script file](../SAGA_supporting_files/Steps.bat) that processes all the relevant SAGA tools needed for hydrology and
 channel network analysis. 
 
 ### Additional step for study region with ocean or large lakes
@@ -94,5 +94,5 @@ Both Aster and SRTM data seem to mass up when there is a water body, for example
 #### Flow accumulation
 From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
 
-#### [Back to Main Page](index.md)
+#### [Back to Main Page](../index.md)
 
