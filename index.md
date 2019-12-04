@@ -21,4 +21,7 @@ I used batch processing algorithms for SAGA tools to automate the processing tas
 I used data from OpenStreetMap and Resilience Academy to understand urban resilience in Dar es Salaam, Tanzania. Specifically, I looked at the hotel distribution in Dar es Salaam's subwards, and the number of restaurants that are within 500 meters from each hotel. I implemented my solution in PostGIS in QGIS.
 
 ## [Activity 4](malawi_analysis.md): Multi-Criteria analysis of the vulnerability of Malawi
-For this activity, I try to replicate the analysis of Malawi vulnerability of Malcomb et al.(2014)'s paper and critically understand the reproducibility and uncertainty of his approach. 
+I tried to replicate the analysis of Malawi vulnerability of Malcomb et al.(2014)'s paper and critically understand the reproducibility and uncertainty of his approach. 
+
+## [Activity 5]:Sharpie versus Storm Surge in the Twittersphere of Hurricane Dorian
+I conducted an analysis of the twitter activity during Hurrican Dorian to identify and map potential geographic clustering and hotspots of Twitter activity and think about whether the real hurricane path or President Trump's fake sharpie maps had driven more Twitter activity.
