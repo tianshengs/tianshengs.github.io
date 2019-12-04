@@ -13,9 +13,9 @@ After updating the model, I downloaded the census-tract level shapefile of Puert
 ![sanjuan](https://user-images.githubusercontent.com/25497706/68078465-4415ea80-fdac-11e9-970d-f1052a7b6d6d.png)
 
 
-This is a [graph](Plots/San_Juan_Plot_1.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and distance from central San Juan. As we can see from the graph, while a majority of the census tracts have over 95% of Hispanic population, the few census tracts relatively closer to San Juan has slightly more non-Hispanic population. 
+This is a [graph](../Plots/San_Juan_Plot_1.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and distance from central San Juan. As we can see from the graph, while a majority of the census tracts have over 95% of Hispanic population, the few census tracts relatively closer to San Juan has slightly more non-Hispanic population. 
 
-This is a [graph](Plots/San_Juan_Plot_2.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and direction from central San Juan. Because central San Juan is located on a small island in the Northern coast of Puerto Rico, almost all of the other census tracts are located to the south and east of central San Juan. Most of the census tracts to the South and Southeast has over 95% of Hispanic population, while a few coastal census tracts to the east of San Juan have a slightly lower percentage. 
+This is a [graph](../Plots/San_Juan_Plot_2.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and direction from central San Juan. Because central San Juan is located on a small island in the Northern coast of Puerto Rico, almost all of the other census tracts are located to the south and east of central San Juan. Most of the census tracts to the South and Southeast has over 95% of Hispanic population, while a few coastal census tracts to the east of San Juan have a slightly lower percentage. 
 
 
 #### [Back to Main Page](index.md)
