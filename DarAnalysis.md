@@ -24,7 +24,7 @@ the subward layer can be added to QGIS and my PostGIS database.
 Here are the steps for my spatial analysis.
 ```
 /* create a new view that contains all the hotels and guest houses in Dar es Salaam as dots*/
-CREATE TABLE HotelInDar AS
+CREATE TABLE hotelindar AS
 SELECT osm_id, way, tourism
 FROM planet_osm_point as a
 where a.tourism = 'hotel' OR a.tourism = 'guest_house'
