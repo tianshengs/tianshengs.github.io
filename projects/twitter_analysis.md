@@ -223,8 +223,14 @@ WHERE count_dorian > 0 or count > 0
 Finally, I converted counties shapefile into centroid points and create a heatmap (Kernel Density) of tweets using the Heatmap algorithm in QGIS with a radius of 100 kilometers, the weight from field to the tweeet rate column, and the pixel sizes to 500. Note that these numbers are arbitrary selections with the purpose to get continuity between data points and a smooth visualization without running too long.
 
 #### (3). Clustering visualization
+G*, or so-called Getis-Ord Statistic, is a useful tool for Hot Spot analysis. 
+Below is how the G* score is calculated:
+![GUID-AEFD71B5-BE33-42AB-84FB-AEE3FD5E2114-web](https://user-images.githubusercontent.com/25497706/70180707-8cc40a80-16ae-11ea-93f7-35866850b831.png)
 
-Finally, I visulized clustering in GeoDa. First of all, I create a spatial weights matrix using **Tools->Weights Manager**. Then, I created the local G* cluster statistic map of tweets per 10,000 people and the normalized tweet difference index that I used using **Space->local G* cluster map** and setted the variable to the specific column.
+Image from ArcMap's [documentation on Hot Spot Analysis (Getis-Ord Gi*)](https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm) 
+
+The G* cluster algorithm was used to create spatial cluster maps of Tweets related to Dorian huricane in GeoDa. First of all, I create a spatial weights matrix using **Tools->Weights Manager**. Then, I created the local G* cluster statistic map of tweets per 10,000 people and the normalized tweet difference index that I used using **Space->local G* cluster map** and setted the variable to the specific column.
+
 
 ### Results
 
