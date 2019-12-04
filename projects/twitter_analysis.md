@@ -127,7 +127,7 @@ Once I have uploaded all data tables into my PostGIS database, I conducted spati
 
 **b. a normalized tweet difference index: (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)**
 
-[Here](queries/twitter.sql) are the specific SQL queries that I ran:
+[Here](../queries/twitter.sql) are the specific SQL queries that I ran:
 
 ```
 /*Tiansheng Sun Twitter Analysis*/
