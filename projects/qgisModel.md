@@ -18,4 +18,4 @@ This is a [graph](../Plots/San_Juan_Plot_1.html) that I created using Data Plotl
 This is a [graph](../Plots/San_Juan_Plot_2.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and direction from central San Juan. Because central San Juan is located on a small island in the Northern coast of Puerto Rico, almost all of the other census tracts are located to the south and east of central San Juan. Most of the census tracts to the South and Southeast has over 95% of Hispanic population, while a few coastal census tracts to the east of San Juan have a slightly lower percentage. 
 
 
-#### [Back to Main Page](index.md)
+#### [Back to Main Page](../index.md)
