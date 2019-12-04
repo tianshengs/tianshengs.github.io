@@ -13,7 +13,7 @@ and most of the data used in this activity is from OpenStreetMap. Additional inf
 Resilience Academy.
 
 The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
-and stored as an **.osm file**. Then, I ran the [convertOSM.bat](../osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
+and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](../osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
 PostGIS database. The data that I used is the planet_osm_point data, which contains points with information of their geometry and information.
 Now, the OpenStreetMap data is ready to use!
 
