@@ -23,22 +23,25 @@ the subward layer can be added to QGIS and my PostGIS database.
 ### Data Analysis
 Here are the steps for my spatial analysis.
 ```
-/* create a new view that contains all the hotels and guest houses in Dar es Salaam as dots*/
+/*Written by Tiansheng Sun */
+
+/*create a new view that contains all the hotels and guest houses in Dar es Salaam as dots*/
 CREATE TABLE hotelindar AS
 SELECT osm_id, way, tourism
 FROM planet_osm_point as a
 where a.tourism = 'hotel' OR a.tourism = 'guest_house'
 
-/* add a column to hotelindar */
+/* add a column to hotelindar, which contains the subward in which each hotel is located */
 ALTER TABLE hotelindar ADD COLUMN fid float8
 
-/* update the new field, which contains the subward in which each hotel is located */
+/* update the new field */
 UPDATE hotelindar
 SET fid = a.fid
 FROM subwards as a
 WHERE st_intersects(hotelindar.way, a.geom)
 
-/* find the number of hotels in each subward */
+/*find the number of hotels in each subward*/
+CREATE TABLE hotel_count as 
 SELECT fid, count(distinct way)
 FROM hotelindar
 GROUP BY fid
