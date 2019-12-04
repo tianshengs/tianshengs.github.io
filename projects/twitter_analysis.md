@@ -3,16 +3,28 @@
 ### Introduction
 Social Media data, for example, Twitter data has increasingly become more important in helping us understand our world. Specifically, in the discipline of geography, Twitter data can be used to understand real time geographic phenomenon and distribution across space. Although unfortunately only 1% of all Tweets on Twitter have geo-coordinates, we may extract these tweets with geo-coordinates and use it for our research. In the era of big data, these tweets can be extremely powerful and can provide us with very important insights and findings that other sources of data cannot provide.
 
-One specific use of Twitter data in the discipline of geography is to understand the geographic and spatial clustering of tweet activities over a specific event. When something happens, people from different locations may react to the event differently.A look into potential geographic clustering of tweet activities over this specific event can therefore tell us a lot about this event and help us think about the potential factors that affect people's reactions over the event by looking at the most common words, word association or geographic clustering patterns of all tweets of interest.
+One specific use of Twitter data in the discipline of geography is to understand the geographic and spatial clustering of tweet activities over a specific event. When something happens, people from different locations may react to the event differently. A look into potential geographic clustering of tweet activities over this specific event can therefore tell us a lot about this event and help us think about the potential factors that affect people's reactions over the event by looking at the most common words, word association or geographic clustering patterns of all tweets of interest.
 
 ### Study case: Dorian hurricane
 
-For this specific activity, I looked at the Tweet activity about hurricane dorian and conduct textual and spatial analysis to understand whether the the actual storm surge or President Trump’s sharpie maps had more influence on driving Twitter activity in Eastern United States.
+Hurrican Dorian was a powerful hurricane that was first formed in August 24th over the central Atlantic. As the hurricane became extremely strong, the hurricane stroke through the Bahamas, causing a lot of damages to the country. Then, on Semptember 3rd, the hurricane entered the United States from Florida all the way to the Northeastern coast of the United States and Nova Scotia in Canada, and was finally dissapated in New Foundland in September 10th.
 
-### Method
-This activity is split into three sections: Twitter data preparation and textual analysis in RStudio, SQL spatial analysis in QGIS, and clustering visualization in GeoDa.
+This graph shows the actual Dorian Hurricane's path in the United States:
+![Screenshot-2019-12-4 Live Maps Tracking Hurricane Dorian’s Path](https://user-images.githubusercontent.com/25497706/70168429-d99be700-1696-11ea-9106-61c3765f5a20.png)
 
-#### (1). Twitter data preparation and analysis
+[Map Source](https://www.nytimes.com/interactive/2019/09/06/us/hurricane-dorian-path-map-track.html): Matthew Bloch and Denise Lu (2019). Live Maps: Tracking Hurricane Dorian’s Path. *New York Times.*
+
+On September 4th, however, President of the United States Donald Trump presented a sharpied map of Hurrican Dorian, which shows that Alabama was one of the state that will be hit hard by Hurrican Dorian.However, as we see from the actual path of Dorian Hurricane, Alabama was not influenced by Dorian Hurricane that much. 
+
+Here is a photo of the map that President Donald Trump presented:
+![1172289651 jpg 0](https://user-images.githubusercontent.com/25497706/70169179-4d8abf00-1698-11ea-8464-d750c3133a49.jpg)
+[Image Source](https://www.vox.com/policy-and-politics/2019/9/6/20851971/trump-hurricane-dorian-alabama-sharpie-cnn-media): Stewart, E. (2019). The incredibly absurd Trump/CNN SharpieGate feud, explained. *VOX.*
+
+Apprently, Donald Trump's map, with this laughable mistake, has received wide notice on social media. However, it would be interesting to use Twitter Data to understand whether the actual storm path or President Trump's sharpie maps had more influence on driving Twitter activity in Eastern United States. 
+
+For this lab, I looked at the Twitter data about Dorian Hurricane starting from September 11, 2019 and conducted textual analysis in RStudio and spatial analysis in QGIS to understand this case. Textually, I looked at the most popular keywords and associations of common words to see if any specific words such as "Alabama" or "Trump" stand out. Spatially, I plan to see if there is a spatial clustering in the number of tweets related to Dorian Hurricanes. Is Alabama part of the spatial cluster and what about the counties along the coast that were actually hitted by Hurrican Dorian? This look into the spatial clustering of Twitter data can also help us understand the impact of Trump's Sharpied map and the actual path of Dorian hurricane.
+
+### Data
 For this activity, I used two data frames:
 
 a. **dorian**: 200,000 tweets from September 11, 2019 that contained keywords “dorian,” “hurricane” or “sharpiegate”.
@@ -46,12 +58,18 @@ dorian <- lat_lng(dorian,coords=c("bbox_coords"))
 november <- lat_lng(november,coords=c("bbox_coords"))
 ```
 
-I then modified the R file to do the following text/contextual analysis: 
+### Method
+This activity is split into three sections: Textual analysis in RStudio, SQL spatial analysis in QGIS, and clustering visualization in GeoDa.
+
+#### (1). Textual analysis
+I modified the R file to do the following text/contextual analysis: 
 
 **a. most popular words**
+To get the most popular words, I first have to get the plain tweet texts of all dorian tweets of interest. I used the function `plain_tweets` to get a reformatted data without URL links, line breaks, fancy spaces/tabs, fancy apostrophes etc. in the text column of the database. Then, I used the function `select` to select only the text column of the data base and use the function `unnest_tokens` to split a column into word tokens.
 
-The following R code was run to get the most popular 20 words used in all tweets of interest. Note that I removed the common stop words ("and", "or") because these words are common but are useless for our analysis purpose.
+Then I created a list of stop words (useless words) and add "t.co" twitter links to the list.This step is important because common stop words such as "and", "or are useless and cannot provide any contextual information for our analysis purpose. "t.co" links are also deleted because we do not want to include links in our most common words neither. I used the function `anti_join` to find all  all rows from dorian words where there are not matching any stop words. Once the stop words have been deleted, I created a graph of the most popular 20 words found in tweet using `ggplot`.
 
+Here is the specific R code that I ran to get my graph.
 ```
 #get the plain tweet texts of all dorian tweets
 dorian$text <- plain_tweets(dorian$text)
