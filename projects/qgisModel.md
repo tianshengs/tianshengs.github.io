@@ -1,5 +1,5 @@
 # QGIS Modeling
-During the first week, I created a model to calculate the direction and distance from a point. The user can define a city center as a point or selected features, from which a point with the medium coordinates of the centroids of all selected features is calculated. Finally, the direction and distance from the city center point to the centroid of each feature in the shapefile is calculated with new fields in the attribute table (distance and direction) of the output. Finally, I created a documentation for the model that I created. [Here](model/distance_from_point.model3) is my model.
+During the first week, I created a model to calculate the direction and distance from a point. The user can define a city center as a point or selected features, from which a point with the medium coordinates of the centroids of all selected features is calculated. Finally, the direction and distance from the city center point to the centroid of each feature in the shapefile is calculated with new fields in the attribute table (distance and direction) of the output. Finally, I created a documentation for the model that I created. [Here](../model/distance_from_point.model3) is my model.
 
 During the second week, I modified and updated the [model](../model/new_distance_from_point.model3) by doing the following:
 - Add a Help webpage to my model.
