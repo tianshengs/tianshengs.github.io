@@ -40,6 +40,7 @@ november <- lat_lng(november,coords=c("bbox_coords"))
 I then modified the R file to do the following text/contextual analysis: 
 
 **a.most popular words**
+
 The following R code was run to get the most popular 20 words used in all tweets of interest.
 
 ```
@@ -70,6 +71,7 @@ dorianWords %>%
 ```
 
 **b.association of common keywords**
+
 The following R code was run to get a word cloud of association of common keywords in tweet content during Dorian storm with more than 30 instances
 
 ```
