@@ -13,7 +13,7 @@ and most of the data used in this activity is from OpenStreetMap. Additional inf
 Resilience Academy.
 
 The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
-and stored as an **.osm file**. Then, I ran the [convertOSM.bat](osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
+and stored as an **.osm file**. Then, I ran the [convertOSM.bat](../osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
 PostGIS database. The data that I used is the planet_osm_point data, which contains points with information of their geometry and information.
 Now, the OpenStreetMap data is ready to use!
 
@@ -21,7 +21,7 @@ Moreover, the [Resilience Academy](https://geonode.resilienceacademy.ac.tz/geose
 the subward layer can be added to QGIS and my PostGIS database. 
 
 ### Data Analysis
-[Here](queries/dar.sql) are the steps for my spatial analysis.
+[Here](../queries/dar.sql) are the steps for my spatial analysis.
 ```
 /*Written by Tiansheng Sun */
 
@@ -80,7 +80,7 @@ group by a.osm_id, a.way
 ```  
 
 ### Result
-I created a [Leaflet map](dsmmap/index.html) to visualize the final product of my analysis. The darker the subward, the higher its density
+I created a [Leaflet map](../dsmmap/index.html) to visualize the final product of my analysis. The darker the subward, the higher its density
 of hotel is. The darker and larger each dot (representing hotel) is, the more restaurants are within 500 meters. You can check and uncheck
 each layer, and also compare my result with the OpenStreetMap base map underneath.
 
