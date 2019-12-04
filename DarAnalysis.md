@@ -21,7 +21,7 @@ Moreover, the [Resilience Academy](https://geonode.resilienceacademy.ac.tz/geose
 the subward layer can be added to QGIS and my PostGIS database. 
 
 ### Data Analysis
-Here are the steps for my spatial analysis.
+[Here](SQL_Qur are the steps for my spatial analysis.
 ```
 /*Written by Tiansheng Sun */
 
