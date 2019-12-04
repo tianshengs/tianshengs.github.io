@@ -1,7 +1,7 @@
 # Sharpie versus Storm Surge in the Twittersphere of Hurricane Dorian
 
 ### Method
-This activity is split into three sections: Twitter data preparation and textual analysis in RStudio, SQL spatial analysis in QGIS, and clustering visualization in GEODa.
+This activity is split into three sections: Twitter data preparation and textual analysis in RStudio, SQL spatial analysis in QGIS, and clustering visualization in GeoDa.
 
 #### (1). Twitter data preparation and analysis
 For this activity, I used two data frames:
@@ -192,6 +192,8 @@ WHERE count_dorian > 0 or count > 0
 Finally, I converted counties shapefile into centroid points and create a heatmap (Kernel Density) of tweets using the Heatmap algorithm in QGIS with a radius of 100 kilometers, the weight from field to the tweeet rate column, and the pixel sizes to 500. Note that these numbers are arbitrary selections with the purpose to get continuity between data points and a smooth visualization without running too long.
 
 #### (3). Clustering visualization
+
+Finally, I visulized clustering in GeoDa. First of all, I create a spatial weights matrix using **Tools->Weights Manager**. Then, I created the local G* cluster statistic map of tweets per 10,000 people and the normalized tweet difference index that I used using **Space->local G* cluster map** and setted the variable to the specific column.
 
 ### Results
 #### 1.A graph of most common 15 keywords in tweet content
