@@ -222,3 +222,4 @@ The second map shows the changing significance with changing p value.
 #### 5. Heatmap (Kernel Density) of tweet activity on Durian Hurrican
 ![heatmap](https://user-images.githubusercontent.com/25497706/70110865-65256180-161e-11ea-866f-933db7927711.png)
 
+#### [Back to Main Page](../index.md)
