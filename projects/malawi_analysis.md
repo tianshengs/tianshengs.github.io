@@ -53,3 +53,5 @@ Moreover, the same index can produce distinct patterns of vulnerability at diffe
 
 **Reference**:
 Tate, E. (2012). Social vulnerability indices: a comparative assessment using uncertainty and sensitivity analysis. *Natural Hazards, 63(2), 325-347.*
+
+#### [Back to Main Page](../index.md)
