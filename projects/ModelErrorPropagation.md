@@ -1,5 +1,5 @@
 # Global Digital Elevation Models, Model Error Propagation and Uncertainty
-This is a continuation of the [Kilimanjaro project](globalDigitalElevation.md). For the Kilimanjaro project, I showed the steps 
+This is a continuation of the [Kilimanjaro project](../projects/globalDigitalElevation.md). For the Kilimanjaro project, I showed the steps 
 needed to model hydrology and channel networks of the Mt.Kilimanjaro in northern Tanzania in SAGA using SRTM data. 
 
 This week, I plan to model the hydrology and channel networks of **Bali and Lombok** islands, Indonesia. In this project,
