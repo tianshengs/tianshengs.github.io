@@ -53,8 +53,6 @@ where counties.geoid = a.geoid
 ALTER TABLE counties ADD COLUMN tweet_rate real;
 UPDATE counties SET tweet_rate = count_dorian / pop * 10000.0
 
-
-
 /*calculate the ndti (tweets about dorian - baselind november twitter activity)/(tweet about storm + baseline november twitter activity)*/
 ALTER TABLE counties ADD COLUMN ndti real;
 UPDATE counties SET ndti = 0.0;
