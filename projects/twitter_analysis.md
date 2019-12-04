@@ -39,7 +39,7 @@ november <- lat_lng(november,coords=c("bbox_coords"))
 
 I then modified the R file to do the following text/contextual analysis: 
 
-**a.most popular words**
+**a. most popular words**
 
 The following R code was run to get the most popular 20 words used in all tweets of interest.
 
@@ -70,7 +70,7 @@ dorianWords %>%
        title = "Count of unique words found in Dorian tweets")
 ```
 
-**b.association of common keywords**
+**b. association of common keywords**
 
 The following R code was run to get a word cloud of association of common keywords in tweet content during Dorian storm with more than 30 instances
 
@@ -122,9 +122,10 @@ dbWriteTable(con,'counties',counties, overwrite=TRUE)
 
 #### (2). SQL spatial analysis
 Once I have uploaded all data tables into my PostGIS database, I conducted spatial analysis in QGIS with SQL queries. First of all, I added geometry to my three data frames and transformed them to USA Contiguous Lambert Conformal Conic projection. Then, since I want to look at only county in Eastern United States, I deleted the states that I am not interested in from the census data layer.After that, I counted the number of each type of tweet (dorian and november) by county and normalize the datausing the following two methods:
-**a.the number of tweets per 10,000 people**
 
-**b.a normalized tweet difference index: (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)**
+**a. the number of tweets per 10,000 people**
+
+**b. a normalized tweet difference index: (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)**
 
 [Here](SQL_quries/twitter.sql) are the specific SQL queries that I ran:
 
@@ -198,26 +199,26 @@ Finally, I converted counties shapefile into centroid points and create a heatma
 Finally, I visulized clustering in GeoDa. First of all, I create a spatial weights matrix using **Tools->Weights Manager**. Then, I created the local G* cluster statistic map of tweets per 10,000 people and the normalized tweet difference index that I used using **Space->local G* cluster map** and setted the variable to the specific column.
 
 ### Results
-#### 1.A graph of most common 15 keywords in tweet content
+#### 1. A graph of most common 15 keywords in tweet content
 ![count](https://user-images.githubusercontent.com/25497706/70108730-f80ecd80-1617-11ea-9ee3-36946303a0e9.png)
 
-#### 2.A graph of association of common keywords in tweet content during Dorian storm with more than 30 instances
+#### 2. A graph of association of common keywords in tweet content during Dorian storm with more than 30 instances
 ![word_association](https://user-images.githubusercontent.com/25497706/70109428-dca4c200-1619-11ea-94e0-3b2f1bfc0dc1.png)
 
-#### 3.Spatial hotspot maps(G*) of tweets per 10,000 people during the storm by county
+#### 3. Spatial hotspot maps(G*) of tweets per 10,000 people during the storm by county
 The first map shows the area with significant high and low twitter activity with p = 0.05.
 ![G_map](https://user-images.githubusercontent.com/25497706/70108331-11634a00-1617-11ea-8087-f1db5e6e7dea.png)
 
 The second map shows the changing significance with changing p value.
 ![G_map2](https://user-images.githubusercontent.com/25497706/70108661-d57cb480-1617-11ea-8463-cefbb3c389d2.png)
 
-#### 4.Spatial hotspot maps(G*) of a normalized tweet difference index (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)
+#### 4. Spatial hotspot maps(G*) of a normalized tweet difference index (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)
 The first map shows the area with significant high and low twitter activity with an alpha level of 0.05.
 ![G_map4](https://user-images.githubusercontent.com/25497706/70108682-df9eb300-1617-11ea-88dc-53e0c1eaba89.png)
 
 The second map shows the changing significance with changing p value.
 ![G_map3](https://user-images.githubusercontent.com/25497706/70108703-eaf1de80-1617-11ea-96ea-06c47b706d12.png)
 
-#### 5.Heatmap (Kernel Density) of tweet activity on Durian Hurrican
+#### 5. Heatmap (Kernel Density) of tweet activity on Durian Hurrican
 ![heatmap](https://user-images.githubusercontent.com/25497706/70110865-65256180-161e-11ea-866f-933db7927711.png)
 
