@@ -126,7 +126,7 @@ dorianWordPairs %>%
   theme_void()
 ```
 
-**c: uploade to PostSQL database**
+**c. uploade to PostSQL database**
 As the final step, I uploaded the twitter data frames into my PostSQL database so that I could use them in QGIS for SQL spatial analysis. I also downloaded county-level geographic and population data from the U.S. Census and uploaded all the counties into my PostGIS database.
 
 Here is how I uploaded the two data frams into my PostGRESQL dadtabase after connecting to my database:
