@@ -11,7 +11,7 @@ a. **dorian**: 200,000 tweets from September 11, 2019 that contained keywords â€
 b. **november**: 200,000 tweets from November 19, 2019 that reflects the baseline Twitter activity across space.
 
 Professor Joseph Holler helped provide the sample Twitter data used for this activity and the R code used to generate the data.
-"search_tweets" query was first used to get specific data from Twitter, and GPS coordinates was then converted into lat and lng columns with the "lat_lng" query. Then, "subset" query was used to select any tweets with lat and lng columns (from GPS) or designated place types of 'city', 'neighborhood' and 'poi'. This step is important because not all tweets have geographic coordinates. The final step is to convert bounding boxes of each place into centroids for lat and lng columns. Now the two data frames are now ready for use.
+`search_tweets` query was first used to get specific data from Twitter, and GPS coordinates was then converted into lat and lng columns with the `lat_lng` query. Then, `subset` query was used to select any tweets with lat and lng columns (from GPS) or designated place types of 'city', 'neighborhood' and 'poi'. This step is important because not all tweets have geographic coordinates. The final step is to convert bounding boxes of each place into centroids for lat and lng columns. Now the two data frames are now ready for use.
 ```
 #get tweets for hurricane Dorian, searched on September 11, 2019
 dorian1 <- search_tweets("dorian OR hurricane OR sharpiegate", n=200000, include_rts=FALSE, token=twitter_token, geocode="32,-78,1000mi", retryonratelimit=TRUE)
@@ -41,9 +41,10 @@ I then modified the R file to do the following text/contextual analysis:
 
 **a. most popular words**
 
-The following R code was run to get the most popular 20 words used in all tweets of interest.
+The following R code was run to get the most popular 20 words used in all tweets of interest. Note that I removed the common stop words ("and", "or") because these words are common but are useless for our analysis purpose.
 
 ```
+#get the plain tweet texts of all dorian tweets
 dorian$text <- plain_tweets(dorian$text)
 
 dorianText <- select(dorian,text)
@@ -72,7 +73,7 @@ dorianWords %>%
 
 **b. association of common keywords**
 
-The following R code was run to get a word cloud of association of common keywords in tweet content during Dorian storm with more than 30 instances
+The following R code was run to get a word cloud of association of common keywords in tweet content during Dorian storm with more than 30 instances.
 
 ```
 #find all the word pairs
