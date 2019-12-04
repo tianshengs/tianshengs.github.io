@@ -1,5 +1,14 @@
 # Sharpie versus Storm Surge in the Twittersphere of Hurricane Dorian
 
+### Introduction
+Social Media data, for example, Twitter data has increasingly become more important in helping us understand our world. Specifically, in the discipline of geography, Twitter data can be used to understand real time geographic phenomenon and distribution across space. Although unfortunately only 1% of all Tweets on Twitter have geo-coordinates, we may extract these tweets with geo-coordinates and use it for our research. In the era of big data, these tweets can be extremely powerful and can provide us with very important insights and findings that other sources of data cannot provide.
+
+One specific use of Twitter data in the discipline of geography is to understand the geographic and spatial clustering of tweet activities over a specific event. When something happens, people from different locations may react to the event differently.A look into potential geographic clustering of tweet activities over this specific event can therefore tell us a lot about this event and help us think about the potential factors that affect people's reactions over the event by looking at the most common words, word association or geographic clustering patterns of all tweets of interest.
+
+### Study case: Dorian hurricane
+
+For this specific activity, I looked at the Tweet activity about hurricane dorian and conduct textual and spatial analysis to understand whether the the actual storm surge or President Trump’s sharpie maps had more influence on driving Twitter activity in Eastern United States.
+
 ### Method
 This activity is split into three sections: Twitter data preparation and textual analysis in RStudio, SQL spatial analysis in QGIS, and clustering visualization in GeoDa.
 
