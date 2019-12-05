@@ -65,6 +65,7 @@ This activity is split into three sections: Textual analysis in RStudio, SQL spa
 I modified the R file to do the following text/contextual analysis: 
 
 **a. most popular words**
+
 To get the most popular words, I first have to get the plain tweet texts of all dorian tweets of interest. I used the function `plain_tweets` to get a reformatted data without URL links, line breaks, fancy spaces/tabs, fancy apostrophes etc. in the text column of the database. Then, I used the function `select` to select only the text column of the data base and use the function `unnest_tokens` to split a column into word tokens.
 
 Then I created a list of stop words (useless words) and add "t.co" twitter links to the list.This step is important because common stop words such as "and", "or are useless and cannot provide any contextual information for our analysis purpose. "t.co" links are also deleted because we do not want to include links in our most common words neither. I used the function `anti_join` to find all  all rows from dorian words where there are not matching any stop words. Once the stop words have been deleted, I created a graph of the most popular 20 words found in tweet using `ggplot`.
@@ -99,6 +100,7 @@ dorianWords %>%
 ```
 
 **b. association of common keywords**
+
 Then, I got the association of common keywords. First of all, I used the function `unnest_tokens` to get word pairs from all tweets of interest and used the function `seperate` to split the column into two. Then, I used the `count` function to count the number of associations for each word and sort the data frame. Finally, I created the graph of a word cloud with space indicating association for words with more than 30 instances using `ggraph`.'
 
 Here is the specific R code that I ran to get my graph.
@@ -127,6 +129,7 @@ dorianWordPairs %>%
 ```
 
 **c. uploade to PostSQL database**
+
 As the final step, I uploaded the twitter data frames into my PostSQL database so that I could use them in QGIS for SQL spatial analysis. I also downloaded county-level geographic and population data from the U.S. Census and uploaded all the counties into my PostGIS database.
 
 Here is how I uploaded the two data frams into my PostGRESQL dadtabase after connecting to my database:
@@ -149,6 +152,7 @@ dbWriteTable(con,'counties',counties, overwrite=TRUE)
 ```
 
 #### (2). SQL spatial analysis
+
 Once I have uploaded all data tables into my PostGIS database, I conducted spatial analysis in QGIS with SQL queries. First of all, I added geometry to my three data frames and transformed them to USA Contiguous Lambert Conformal Conic projection. Then, since I want to look at only county in Eastern United States, I deleted the states that I am not interested in from the census data layer.After that, I counted the number of each type of tweet (dorian and november) by county and normalize the datausing the following two methods:
 
 **a. the number of tweets per 10,000 people**
@@ -223,6 +227,7 @@ WHERE count_dorian > 0 or count > 0
 Finally, I converted counties shapefile into centroid points and create a heatmap (Kernel Density) of tweets using the Heatmap algorithm in QGIS with a radius of 100 kilometers, the weight from field to the tweeet rate column, and the pixel sizes to 500. Note that these numbers are arbitrary selections with the purpose to get continuity between data points and a smooth visualization without running too long.
 
 #### (3). Clustering visualization
+
 G*, or so-called Getis-Ord Statistic, is a useful tool for Hot Spot analysis. 
 Below is how the G* score is calculated:
 
@@ -238,11 +243,13 @@ The G* cluster algorithm was used to create spatial cluster maps of Tweets relat
 #### Textual Analysis Graphs
 
 **1. A graph of most common 20 keywords in tweet content**
+
 ![count](https://user-images.githubusercontent.com/25497706/70108730-f80ecd80-1617-11ea-9ee3-36946303a0e9.png)
 
 From the graph, it is interesting to see that "alabama", "sharpiegate", "trump", "donaldtrump" as the 3rd, 4th, 6th and 7th most common words of all Tweets of interest, and only "hurricane" and "dorian" have significantly more appearence in all tweets. Although "carolina", "north" and "florida" are also among the top 20 words that appeared, they only ranked 13th, 19th and 14th.
 
 #### 2. A graph of association of common keywords in tweet content during Dorian storm with more than 30 instances
+
 ![word_association](https://user-images.githubusercontent.com/25497706/70109428-dca4c200-1619-11ea-94e0-3b2f1bfc0dc1.png)
 
 From the graph, we can see that "alabama" is extremely close to the word "dorian". Indeed, "alabama" is the closest word to "dorian" of all common words showed in the word cloud. This association is even stronger than between "dorian" and "bahamas", where the hurricane costed the most damage. On the other hand, "carolina", "georgia" and "florida" are quite far from the word "dorian".
@@ -250,11 +257,13 @@ From the graph, we can see that "alabama" is extremely close to the word "dorian
 #### Spatial Analysis Graphs
 
 #### 3. Heatmap (Kernel Density) of tweet activities on Durian Hurricane
+
 ![heatmap](https://user-images.githubusercontent.com/25497706/70110865-65256180-161e-11ea-866f-933db7927711.png)
 
 The heat map shows the kernel density of tweet activities on Durian Hurricane. Areas with higher values, meaning a higher proportion of twitter activity, are shown in darker red and areas with lower values, meaning a lower proportion of twitter activity, are shown in white color. We can see that there is a specifically high amount of twitter activity in coastal counties of North and South Carolina, Virgnia, Washington D.C. and part of coastal Massachusetts. The region with the highest amount of twitter activity is around Norfolk and Virginia Beach, Virgnia.
 
 #### 4. Spatial hotspot maps (G*) of tweets per 10,000 people during the storm by county
+
 The first map shows the area with significant high and low twitter activity with p = 0.05.
 ![G_map](https://user-images.githubusercontent.com/25497706/70108331-11634a00-1617-11ea-8087-f1db5e6e7dea.png)
 
@@ -264,6 +273,7 @@ The second map shows the changing significance with changing p value.
 The spatial hotspot map (G*) with p=0.05 significane shows a similar pattern that Coastal Virginia, North and South Carolina and Florida and the Cape Code region of Massachussets has significantly higher twitter activity about Dorian Hurricane and counties further to the West in Northern Louisiana, Eastern and Southern Arkansas, Mississippi, Kentucky, Southern Illionis, Southeastern Missouri and Southern Indiana have significantly lower twitter activity. If we lower the p value to 0.001 level, then we see that counties in Coastal North Carolina and Southern Virginia (around Norfolk and Virginia Beach) and Cape Cod region remain significant, as well as a large region around Kentucky, Southern Illinois and Idiana and pockies of counties in Arkansas and Mississippi.
 
 #### 5. Spatial hotspot maps (G*) of a normalized tweet difference index (tweets about storm – baseline twitter activity)/(tweets about storm + baseline twitter activity)
+
 The first map shows the area with significant high and low twitter activity with an alpha level of 0.05.
 ![G_map4](https://user-images.githubusercontent.com/25497706/70108682-df9eb300-1617-11ea-88dc-53e0c1eaba89.png)
 
@@ -271,10 +281,13 @@ The second map shows the changing significance with changing p value.
 ![G_map3](https://user-images.githubusercontent.com/25497706/70108703-eaf1de80-1617-11ea-96ea-06c47b706d12.png)
 
 ### Analysis
+
 #### a. Trump's Sharpie Map or actual storm path?
+
 From the result maps, we can see the effects of both Trump's Sharpie Map and the actual storm path. However, the actual storm path seemed to influence where the twitters came from and the Trump's Sharpie Map seemed to influence the content of the tweets. Because of the actual storm path in Coastal North Carolina and Virgnia affected the people living in the region, people from these regions are more likely to tweet tweets related to Dorian Hurricane. However, because of the laughbable mistake of Trump's map, the topic seemed to be the main topic many tweets were about from people who lived in regions influenced by Dorian.
 
 #### b. Critical thinking of Twitter Data Analytics
+
 Using social media data, such as Twitter Data, has becoming more popular and this bottom-up method of data collection and research provides a somewhat open-source and well-distributed data from across a lot of groups of people. However, I have to debate the "a lot of groups of people" point that I made in my previous sentence. One disadvantage of using Twitter Data is that places with more people and higher population density will in nature have more tweets. Therefore, we hae to normalize the data in order for it to be valuable; otherwise, the data analysis, for many cases, will be quite similar to a population density map. In my approach, I normalized the tweets by total population to get rid of the effect of population density. However, one should still be aware that the demographics of Twitter data will play an important role and can challenge the accuracy of analysis. Like what Florea, A. and Roman, M. (2018) suggested, many twitter users are indeed young people, compared to elderly people. This suggests that larger cities, such as Chicago, New Orleans, Norfolk and Virgnia Beach, with more young adults, may have a dispropotionately higher number of twitter users than the surrounding rural areas. However, given that demographic information are confidential, it is very hard for us to analyze the effect that demographics may play a role in our dataset.
 
 Moreover, we have to realize that approximately 1-2% of all tweets include geographic information. Although we can get a large enough data set for analysis, like what I did for this project, we surely ignored a lot of other posts for spatial analysis. For example, we do not know if people who live in counties affected by Dorian Hurricanes are more likely to tag themselves compared to a random people in the Midwest. The geographic information used in Twitter is also not very precise. The geospatial information of tweets are defined by a bounding box, using a group of four coordinates to define each specific geographic location. The bounding box may be highly imprecise when we, for example, analyze a place that involves borders. Therefore, we have to be well aware of the limitation of geogrpahic information of Twitter data before we conduct any geography-related projects using Twitter data.
@@ -282,6 +295,7 @@ Moreover, we have to realize that approximately 1-2% of all tweets include geogr
 Finally, Twitter analysis using Twitter data may not be the most reproducible because of the confidentiality of Twitter data. Since twitter data usually includes a lot of personal information, these data are highly confidential and cannot be widely shared to other people. For research purpose, we also cannot include any part of our data in our final result, neither can we use demographic information for research purposes. To maximize reproducibility, it is OK for researches to include twitter status ID's in their researches, but researches should be careful and be aware of the possible lack of reproducibility of their projects.
 
 **Reference**: 
+
 Florea, A. and Roman, M. (2018). Using Face Recognition with Twitter Data for the Study of International Migration. Informatica Economică, 22, 4
 
 #### [Back to Main Page](../index.md)
