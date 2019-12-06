@@ -132,6 +132,6 @@ For the analysis, I looked for both hotels and guest houses in the OpenStreetMap
 Moreover, the dataset seems to include mostly information of individual restaurants. Yet, we should be aware that many hotel guests eat in hotels and guest houses. For example, one of the grandest hotels *Hyatt Regency Dar es Salaam, The Kilimanjaro* located in the CBD district of Dar es Salaam, has zero access to restaurants within 500 meters. However, the hotel should definitely have advanced restaurants and dining services for hotel guests. 
 
 ![Hyatt-Regency-Dar-es-Salaam-The-Kilimanjaro-P087-Exterior-Evening 16x9](https://user-images.githubusercontent.com/25497706/70330631-eb52cb00-180b-11ea-84a9-e88d03299288.jpg)
-A picture of the grand Hyatt Regency Dar es Salaam, The Kilimanjaro
+The grand Hyatt Regency Dar es Salaam, The Kilimanjaro
 
 #### [Back to Main Page](../index.md)
