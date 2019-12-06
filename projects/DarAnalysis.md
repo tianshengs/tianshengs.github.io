@@ -105,7 +105,7 @@ Once I finished the data analysis step, I created a leaflet map to visualize the
 Finally, I used the `QGIS2WEB` plugin and setted the exporter to Leaflet to create a leaflet. In the **Layers and Groups** tab settings, 
 I unchecked **visible** option for the hotel_accessbility layer so that we can start with the layer being invisible until the user selects to look at it in the legend. I chose to check the **visible** option for the base map and **subward_detail** layer. Moreover, in the **Appearence** tab, I changed **Add layer list** to *expanded* to always list each layer and allow them to be turned on and off and **Template** to *full-screen* to create the map that fill the web broswer.I also customized **Scale/Zoom** by setting **Max zoom level** to 19 and **Min zoom level** to 6 and checking the **Restrict to extent** option to prevent the map from panning out of the bounds of the extent currently displayed in QGIS.
 
-**c.Editing the Leaflet HTML page**
+**c. Editing the Leaflet HTML page**
 
 Finally, once the Leaflet had been downloaded, I modified the index.html file to change the symbology and content of my leaflet map. Specifically:
   1. Change the `map.attributioncontrol.SetPrefix` function to include my name and a link to my GitHub page. I also added appropriate credit for all layers.
