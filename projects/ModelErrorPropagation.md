@@ -14,13 +14,9 @@ propogation, and uncertainty;
 
 ## Study area
 
-![960x0](https://user-images.githubusercontent.com/25497706/70332558-dbd58100-180f-11ea-8a2e-c7466ffc5512.jpg)
+![960x0](https://user-images.githubusercontent.com/25497706/70332558-dbd58100-180f-11ea-8a2e-c7466ffc5512.jpg)Pura ulun danu bratan temple, Bali
 
-Pura ulun danu bratan temple, Bali
-
-![Mount-Rinjani-Trekking](https://user-images.githubusercontent.com/25497706/70332472-a761c500-180f-11ea-9607-0fba81653635.jpg)
-
-Mount Rinjani, Lombok
+![Mount-Rinjani-Trekking](https://user-images.githubusercontent.com/25497706/70332472-a761c500-180f-11ea-9607-0fba81653635.jpg)Mount Rinjani, Lombok
 
 
 
