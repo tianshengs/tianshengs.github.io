@@ -1,3 +1,8 @@
+::Tiansheng Sun, October 2019
+::Data source:
+::ASTER Global Digital Elevation Model, distribute by NASA EOSDIS Land Processes DAAC.]
+::NASA Shuttle Radar Topography Mission Global 1 arc second. 2013, distributed by NASA EOSDIS Land Processes DAAC.
+
 ::set the path to your SAGA program
 SET PATH=%PATH%;c:\saga6
 
