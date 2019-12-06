@@ -93,6 +93,7 @@ from hotelindar as a left join planet_osm_point as b
 on b.amenity = 'restaurant' and ST_intersects(st_transform(a.way, 32727), (ST_BUFFER(st_transform(b.way, 32727),  500)))
 group by a.osm_id, a.way
 ```  
+
 **b. Create a Leaflet Map**
 
 Once I finished the data analysis step, I created a leaflet map to visualize the final product of my analysis. The two layers that I included for my final map are **subward_detail**, which shows the density of hotels in each subward as a polygon feature and **restaurant_accessibility**, which shows each hotel as a point feature. Before I exported a map to the internet, I did the following steps to the two layers in QGIS:
