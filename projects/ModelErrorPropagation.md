@@ -1,4 +1,6 @@
 # Global Digital Elevation Models, Model Error Propagation and Uncertainty
+
+## Introduction
 This is a continuation of the [Kilimanjaro project](../projects/globalDigitalElevation.md). For the Kilimanjaro project, I showed the steps 
 needed to model hydrology and channel networks of the Mt.Kilimanjaro in northern Tanzania in SAGA using SRTM data. 
 
@@ -9,6 +11,22 @@ I plan to delve deeper into:
 propogation, and uncertainty;
 - using some new SAGA tools for our analysis;
 - visualizing data error in the elevation models in QGIS.
+
+## Study area
+
+![960x0](https://user-images.githubusercontent.com/25497706/70332558-dbd58100-180f-11ea-8a2e-c7466ffc5512.jpg)
+
+Pura ulun danu bratan temple, Bali
+
+![Mount-Rinjani-Trekking](https://user-images.githubusercontent.com/25497706/70332472-a761c500-180f-11ea-9607-0fba81653635.jpg)
+
+Mount Rinjani, Lombok
+
+
+
+Bali(5,780 square kilometers) and Lambok(4,514.11 square kilometers) are two small islands adjacent to each other located in the Lesser Sunda Islands of Indoensia. Although the two islands are small, both islands are highly populated with a total population of around 8 million residents. Both islands are volcanic in the North and rather flat in the south. The beautiful landscapes from both islands have attracted tons of tourists to visit. Bali, specifically, has become the cradle of Indonesian Tourism, with popular beach resorts, grand hotels and a focus in arts and crafts all over the island. Lombok, on the other hand, is less touristy, although Mount Rinjani, located in the north of the lombok island with an elevation of 3,726 meters, is the second highest volcano in the country and one of the most popular volcano for hiking and viewing.
+
+Interestingly, the two islands are also different significantly both culturally and ecologically. The two islands are seperated by the Wallace Line, an ecological transitional zone between Asia and Australia species. Moreover, although Bali is mostly Hindu, Lombok is highly Islamic. The contrast in landscapes, cultures and ecological zones have made the two islands among the most interesting corners in the world.
 
 ## Preparation step
 
