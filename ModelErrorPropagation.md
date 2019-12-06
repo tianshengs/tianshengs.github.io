@@ -87,10 +87,11 @@ the grid difference between the elevation model of ASTER from that of SRTM, and 
 
 ![ASTER_3D](https://user-images.githubusercontent.com/25497706/66452444-77c05780-ea2e-11e9-9005-f504dc5e618d.png)
 
-### Visualizing potential errors
+### Visualizing potential errors and causes
 I tried to use QGIS to help visualize the potential errors that I may encounter. 
 
 #### Elevation/Steepness
+
 Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat land. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
 
 **Steep/High elevation region**
@@ -100,7 +101,9 @@ Aster and SRTM data seem to be more consistent at higher elevation and steeper l
 ![Low elevation](https://user-images.githubusercontent.com/25497706/66488457-ebd51c80-ea7b-11e9-9ab7-1cf80355f151.png)
 
 #### Water body
-Both Aster and SRTM data seem to mass up when there is a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land. The program encountered here may be related to the problem that I had earlier with the ocean. For hydrology analysis, therefore, it may be best to identify these lake regions and convert them to nodata. Additionaly, the strange straight line pattern as seen across the crater lake may also be caused by the resampling code that I chose to use, which in this case is bilinear interpolation. 
+
+Both Aster and SRTM data seem to mass up inside a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land and because water routes through water bodies are kind of random. The program encountered here may be related to the problem that I had earlier with the ocean. However, as long as the points of entry and exit from the lake are consistent, then there should not be a big problem because after all, we can visualize a polygon water body layer on top of the rivers layer in this case, and the total volume and direction of water flow will still be consistent.
+
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 
 #### Flow accumulation
@@ -109,7 +112,7 @@ From the flow accumulation Grid difference data, both ASTER and SRTM data seem t
 #### Irrigation System
 ![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg)
 
-Another important factor that mess up the hydrological analysis is the irrigation System. Bali in specific, is famous for its rice irrigation system. Called Subak, the Balinese water management system has not only been crucial to the Balinese agarian society, but is closely tied to Balinese tradition, religion, and Tri Hita Karana philosopny. The Water Temple of Pura Ulun Danu Batur (shown in Study area section), for example, is a part of the Balinese Subak System. Indeed, the Balinese Sabuk system was enlisted as a World Cultural heritage site in 2012.
+Another important factor that mess up the hydrological analysis in flat regions is the irrigation System. Bali in specific, is famous for its rice irrigation system. Called Subak, the Balinese water management system has not only been crucial to the Balinese agarian society, but is closely tied to Balinese tradition, religion, and Tri Hita Karana philosopny. The Water Temple of Pura Ulun Danu Batur (shown in Study area section), for example, is a part of the Balinese Subak System. Indeed, the Balinese Sabuk system was enlisted as a World Cultural heritage site in 2012.
 
 Despite water management system's importance to Balinese culture and society, we should be aware that this long cultural tradition and artifical ecosystem complicates the hydrology in the region. 
 
