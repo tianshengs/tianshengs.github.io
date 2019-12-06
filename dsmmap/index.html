@@ -71,7 +71,22 @@
         }
 
         function style_subward_detail_1_0(feature) {
-            if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 1.648800 ) {
+	    if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 0.000000 ) {
+                return {
+                pane: 'pane_subward_detail_1',
+                opacity: 0.6,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.0,
+                fillColor: 'rgba(255,191,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['hotel_density'] > 0.000000 && feature.properties['hotel_density'] <= 1.648800 ) {
                 return {
                 pane: 'pane_subward_detail_1',
                 opacity: 0.6,
