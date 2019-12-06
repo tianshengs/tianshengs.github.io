@@ -1,12 +1,12 @@
 # Hotel distribution and its accessibility to restaurants in Dar es Salaam, Tanzania
 ### Introduction
-**Hamjambo! Karibuni Dar es Salaam.**
+**Hamjambo!**
 As the largest city in Tanzania, Dar es Salaam is one of the most dynamic cities in East Africa. Although it is not particularly famous for
 tourism, it still attracts people to the city who either do business here or use it as a jumping board to famous tourist attractions all over
-the country, such as the Old Town of Zanzibar. Therefore, there is some demand for hotels in the city. Foreign hotel guests, moreover, who are 
-not especially familiar with the city, are also more likely to eat in restaurants near hotels. In this activity, I plan to look at the 
-distribution of hotels in the subwards of Dar es Salaam, and the number of restaurants each hotel is accessible to within 500 meters. What are
-some of the spatial patterns?
+the country, such as Mji Mkongwe, or in English, the Stone Town of Zanzibar. Therefore, there is some demand for hotels in the city. Foreign hotel guests, moreover, who are 
+not especially familiar with the city, are also more likely to eat in restaurants near hotels. 
+In this activity, I plan to look at the 
+distribution of hotels in the subwards of Dar es Salaam, and the number of restaurants each hotel is accessible to within 500 meters. As Dar es Salaam and Tanzania are becoming more popular in the tourism market, understanding the spatial distribution of hotels and their accessibility to restaurants can provide important information about the tourist capacity and more generally, the urban resilience of Dar es Salaam. 
 
 ### Data and Tools
 The data used for this activity are from **OpenStreetMap** and **Resilience Academy**. Dar es Salaam is one of the most mapped cities in OpenStreetMap,
@@ -127,7 +127,7 @@ than the ones in other subwards. Although Kariakoo has the higher density of hot
 access to restaurants. 
 
 ### Thoughts
-For the analysis, I looked for both hotels and guest houses in the OpenStreetMap layer. Yet, hotels and guest houses may produce different results. For example, many of the hotels with no access to restaurants within 500 meters in subwards with a low density may indeed be guest houses or bed-and-breakfasts. 
+For the analysis, I looked for both hotels and guest houses in the OpenStreetMap layer. Yet, hotels and guest houses may produce different results. Unlike hotels, guest houses often tend to be smaller, and are more likely to be located in residential areas. Therefore, many of the hotels with no access to restaurants within 500 meters in subwards with a low density may indeed be guest houses or bed-and-breakfasts. 
 
 Moreover, the dataset seems to include mostly information of individual restaurants. Yet, we should be aware that many hotel guests eat in hotels and guest houses. For example, one of the grandest hotels *Hyatt Regency Dar es Salaam, The Kilimanjaro* located in the CBD district of Dar es Salaam, has zero access to restaurants within 500 meters. However, the hotel should definitely have advanced restaurants and dining services for hotel guests. 
 
