@@ -126,7 +126,7 @@ Moreover, hotels located in subwards with higher density of hotels (city center,
 than the ones in other subwards. Although Kariakoo has the higher density of hotels compared to the city center, the hotels located in the city center has much higher 
 access to restaurants. 
 
-### Some Thoughts
+### Thoughts
 For the analysis, I looked for both hotels and guest houses in the OpenStreetMap layer. Yet, hotels and guest houses may produce different results. For example, many of the hotels with no access to restaurants within 500 meters in subwards with a low density may indeed be guest houses or bed-and-breakfasts. 
 
 Moreover, the dataset seems to include mostly information of individual restaurants. Yet, we should be aware that many hotel guests eat in hotels and guest houses. For example, one of the grandest hotels *Hyatt Regency Dar es Salaam, The Kilimanjaro* located in the CBD district of Dar es Salaam, has zero access to restaurants within 500 meters. However, the hotel should definitely have advanced restaurants and dining services for hotel guests. 
