@@ -18,7 +18,7 @@ Here are the specific data shpafiles that I used for my analysis:
 2. subwards from **Resilience Academy**
 
 The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
-and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](../osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
+and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
 PostGIS database. The data that I used is the planet_osm_point data, which contains points with information of their geometry and information.
 Now, the OpenStreetMap data is ready to use!
 
@@ -28,7 +28,7 @@ the subward layer can be added to QGIS and my PostGIS database.
 ### Method 
 **a. Data Analysis**
 
-I wrote [SQL codes](../queries/dar.sql) for my spatial analysis. Here are the specific steps:
+I wrote [SQL codes](queries/dar.sql) for my spatial analysis. Here are the specific steps:
 
   1. I selected all the points from `planet_osm_point` that are labelled as *"hotel"* or *"guest_house"* under the "tourism" column. These points are stored in a new table called **hotelindar**.
   1. I added a colulmn to the table **hotelindar** and updated the new field with the `subward` information in which each point is located.
@@ -114,7 +114,7 @@ Finally, once the Leaflet had been downloaded, I modified the index.html file to
   1. Customized the initial map extent for a better initial map extent.
 
 ### Result
-Here is the final [Leaflet map](../dsmmap/index.html) of the hotel accessibility of Dar es Salaam. The darker the subward, the higher its density
+Here is the final [Leaflet map](dsmmap/index.html) of the hotel accessibility of Dar es Salaam. The darker the subward, the higher its density
 of hotel is. The darker and larger each dot (representing hotel) is, the more restaurants are within 500 meters. You can check and uncheck
 each layer, and also compare my result with the OpenStreetMap base map underneath.
 
@@ -134,4 +134,4 @@ Moreover, the dataset seems to include mostly information of individual restaura
 ![Hyatt-Regency-Dar-es-Salaam-The-Kilimanjaro-P087-Exterior-Evening 16x9](https://user-images.githubusercontent.com/25497706/70330631-eb52cb00-180b-11ea-84a9-e88d03299288.jpg)
 The grand Hyatt Regency Dar es Salaam, The Kilimanjaro
 
-#### [Back to Main Page](../index.md)
+#### [Back to Main Page](index.md)
