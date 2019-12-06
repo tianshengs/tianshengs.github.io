@@ -14,11 +14,9 @@ propogation, and uncertainty;
 
 ## Study area
 
-![960x0](https://user-images.githubusercontent.com/25497706/70332558-dbd58100-180f-11ea-8a2e-c7466ffc5512.jpg)Pura ulun danu bratan temple, Bali
+![960x0](https://user-images.githubusercontent.com/25497706/70332558-dbd58100-180f-11ea-8a2e-c7466ffc5512.jpg)Pura Ulun Danu Bratan Temple, Bali
 
 ![Mount-Rinjani-Trekking](https://user-images.githubusercontent.com/25497706/70332472-a761c500-180f-11ea-9607-0fba81653635.jpg)Mount Rinjani, Lombok
-
-
 
 Bali(5,780 square kilometers) and Lambok(4,514.11 square kilometers) are two small islands adjacent to each other located in the Lesser Sunda Islands of Indoensia. Although the two islands are small, both islands are highly populated with a total population of around 8 million residents. Both islands are volcanic in the North and rather flat in the south. The beautiful landscapes from both islands have attracted tons of tourists to visit. Bali, specifically, has become the cradle of Indonesian Tourism, with popular beach resorts, grand hotels and a focus in arts and crafts all over the island. Lombok, on the other hand, is less touristy, although Mount Rinjani, located in the north of the lombok island with an elevation of 3,726 meters, is the second highest volcano in the country and one of the most popular volcano for hiking and viewing.
 
@@ -107,6 +105,13 @@ Both Aster and SRTM data seem to mass up when there is a water body, for example
 
 #### Flow accumulation
 From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
+
+#### Irrigation System
+![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg)
+
+Another important factor that mess up the hydrological analysis is the irrigation System. Bali in specific, is famous for its rice irrigation system. Called Subak, the Balinese water management system has not only been crucial to the Balinese agarian society, but is closely tied to Balinese tradition, religion, and Tri Hita Karana philosopny. The Water Temple of Pura Ulun Danu Batur (shown in Study area section), for example, is a part of the Balinese Subak System. Indeed, the Balinese Sabuk system was enlisted as a World Cultural heritage site in 2012.
+
+Despite water management system's importance to Balinese culture and society, we should be aware that this long cultural tradition and artifical ecosystem complicates the hydrology in the region. 
 
 #### [Back to Main Page](index.md)
 
