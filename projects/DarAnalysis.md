@@ -27,6 +27,7 @@ the subward layer can be added to QGIS and my PostGIS database.
 
 ### Method 
 **a. Data Analysis**
+
 I wrote [SQL codes](../queries/dar.sql) for my spatial analysis. Here are the specific steps:
 
   1. I selected all the points from `planet_osm_point` that are labelled as *"hotel"* or *"guest_house"* under the "tourism" column. These points are stored in a new table called **hotelindar**.
