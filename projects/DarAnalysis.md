@@ -1,4 +1,5 @@
 # Hotel distribution and its accessibility to restaurants in Dar es Salaam, Tanzania
+### Introduction
 **Hamjambo!**
 As the largest city in Tanzania, Dar es Salaam is one of the most dynamic cities in East Africa. Although it is not particularly famous for
 tourism, it still attracts people to the city who either do business here or use it as a jumping board to famous tourist attractions all over
@@ -8,9 +9,13 @@ distribution of hotels in the subwards of Dar es Salaam, and the number of resta
 some of the spatial patterns?
 
 ### Data and Tools
-The data used for this activity is from **OpenStreetMap** and **Resilience Academy**. Dar es Salaam is one of the most mapped cities in OpenStreetMap,
-and most of the data used in this activity is from OpenStreetMap. Additional information of the subwards of Tanzania is also collected from
-Resilience Academy.
+The data used for this activity are from **OpenStreetMap** and **Resilience Academy**. Dar es Salaam is one of the most mapped cities in OpenStreetMap,
+and most of the data used in this activity is from OpenStreetMap. Additional information of the subwards of Dar es Salaam is collected from
+Resilience Academy. 
+
+Here are the specific data shpafiles that I used for my analysis:
+1. planet_osm from **OpenStreetMap**
+2. subwards from **Resilience Academy**
 
 The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
 and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](../osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
@@ -20,8 +25,16 @@ Now, the OpenStreetMap data is ready to use!
 Moreover, the [Resilience Academy](https://geonode.resilienceacademy.ac.tz/geoserver/ows) data was loaded in the WFS feature section of QGIS. From there,
 the subward layer can be added to QGIS and my PostGIS database. 
 
-### Data Analysis
-[Here](../queries/dar.sql) are the steps for my spatial analysis.
+### Method 
+**a. Data Analysis**
+I wrote [SQL codes](../queries/dar.sql) for my spatial analysis. Here are the specific steps:
+  1. I selected all the points from `planet_osm_point` that are labelled as *"hotel"* or *"guest_house"* under the "tourism" column. These points are stored in a new table called **hotelindar**.
+  1. I added a colulmn to the table **hotelindar** and updated the new field with the `subward` information in which each point is located.
+  1. I calculated the number of hotels in each subward and store the information in a new table called **hotel_count**.
+  1. I joined the number of hotels information with the `subward` feature and set 0 to subwards with no hotels or guesthouses and stored the joined table into a new table called **subward_detail**.
+  1. I added a column in **subward_detail** in which area of each subward is calculated in square kilometers.
+  1. I created a new field in **subward_detail** to store the hotel density of each subward.
+  1. I calculated the number of restaurants within 500 meters for each hotel. The result is stored in a new view **restaurant_accessibility**.
 ```
 /*Written by Tiansheng Sun */
 
@@ -61,7 +74,7 @@ WHERE count IS NULL
 ALTER TABLE subward_detail ADD COLUMN area real;
 UPDATE subward_detail SET area = ST_Area(geom::geography) /100000
 
-/* update the new field as the number of density of hotels of each subward */
+/* create the new field as the number of density of hotels of each subward */
 ALTER TABLE subward_detail ADD COLUMN hotel_density real;
 UPDATE subward_detail SET hotel_density = count / area
 WHERE count > 0
@@ -78,9 +91,22 @@ from hotelindar as a left join planet_osm_point as b
 on b.amenity = 'restaurant' and ST_intersects(st_transform(a.way, 32727), (ST_BUFFER(st_transform(b.way, 32727),  500)))
 group by a.osm_id, a.way
 ```  
+**b. Create a Leaflet Map**
+
+Once I finished the data analysis step, I created a leaflet map to visualize the final product of my analysis. The two layers that I included for my final map are **subward_detail**, which shows the density of hotels in each subward as a polygon feature and **restaurant_accessibility**, which shows each hotel as a point feature. Before I exported a map to the internet, I did the following steps to the two layers in QGIS:
+
+  1. I exported feature layers with minimum of attribute that I wanted to include as final result and symbolized points as simple marker circles for the ease of translating to Leaflet *circleMarker* symbols. For example, I only included the following columns for **subward_detail**:fid, count, area and hotel_density. I only included the following columns for **hotel accessibility**: sum.
+  1. I included a base layer by using **QuickMapService** in QGIS to add thd **OpenStreetMap** layer.
+  
+Finally, I used the `QGIS2WEB` plugin and setted the exporter to Leaflet to create a leaflet. In the **Layers and Groups** tab settings, 
+I unchecked **visible** option for the hotel_accessbility layer so that we can start with the layer being invisible until the user selects to look at it in the legend. I chose to check the **visible** option for the base map and **subward_detail** layer. Moreover, in the **Appearence** tab, I changed **Add layer list** to *expanded* to always list each layer and allow them to be turned on and off and **Template** to *full-screen* to create the map that fill the web broswer.I also customized **Scale/Zoom** by setting **Max zoom level** to 19 and **Min zoom level** to 6 and checking the **Restrict to extent** option to prevent the map from panning out of the bounds of the extent currently displayed in QGIS.
+
+**c.Editing the Leaflet HTML page**
+
+Finally, once the Leaflet had been downloaded, I modified the inde.html file to change the symbology and content of my leaflet map. 
 
 ### Result
-I created a [Leaflet map](../dsmmap/index.html) to visualize the final product of my analysis. The darker the subward, the higher its density
+Here is the final [Leaflet map](../dsmmap/index.html) of the hotel accessibility of Dar es Salaam. The darker the subward, the higher its density
 of hotel is. The darker and larger each dot (representing hotel) is, the more restaurants are within 500 meters. You can check and uncheck
 each layer, and also compare my result with the OpenStreetMap base map underneath.
 
