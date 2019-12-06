@@ -1,6 +1,6 @@
 # Hotel distribution and its accessibility to restaurants in Dar es Salaam, Tanzania
 ### Introduction
-**Hamjambo!**
+**Hamjambo! Karibuni Dar es Salaam.**
 As the largest city in Tanzania, Dar es Salaam is one of the most dynamic cities in East Africa. Although it is not particularly famous for
 tourism, it still attracts people to the city who either do business here or use it as a jumping board to famous tourist attractions all over
 the country, such as the Old Town of Zanzibar. Therefore, there is some demand for hotels in the city. Foreign hotel guests, moreover, who are 
@@ -22,7 +22,7 @@ and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](../osm_script/c
 PostGIS database. The data that I used is the planet_osm_point data, which contains points with information of their geometry and information.
 Now, the OpenStreetMap data is ready to use!
 
-Moreover, the [Resilience Academy](https://geonode.resilienceacademy.ac.tz/geoserver/ows) data was loaded in the WFS feature section of QGIS. From there,
+Moreover, the [Resilience Academy](https://geonode.resilienceacademy.ac.tz/) data was loaded in the WFS feature section of QGIS. From there,
 the subward layer can be added to QGIS and my PostGIS database. 
 
 ### Method 
@@ -127,8 +127,11 @@ than the ones in other subwards. Although Kariakoo has the higher density of hot
 access to restaurants. 
 
 ### Some Thoughts
-For the analysis, I looked for both hotels and guest houses in the OpenStreetMap layer. Yet, hotels and guest houses may produce different results. For example, many of the hotels with no access to restaurants within 500 meters in subwards with a low density may indeed be guest houses or bed-and-breakfast. 
+For the analysis, I looked for both hotels and guest houses in the OpenStreetMap layer. Yet, hotels and guest houses may produce different results. For example, many of the hotels with no access to restaurants within 500 meters in subwards with a low density may indeed be guest houses or bed-and-breakfasts. 
 
-Moreover, the dataset seems to include mostly information of individual restaurants. Yet, we should be aware that many hotel guests eat in hotels and guest houses. For example, one of the grandest restaurants *Hyatt Regency Dar es Salaam, The Kilimanjaro* located in the CBD district of Dar es Salaam, has zero access to restaurants within 500 meters. However, the hotel should definitely have advanced restaurants and dining services for hotel guests. 
+Moreover, the dataset seems to include mostly information of individual restaurants. Yet, we should be aware that many hotel guests eat in hotels and guest houses. For example, one of the grandest hotels *Hyatt Regency Dar es Salaam, The Kilimanjaro* located in the CBD district of Dar es Salaam, has zero access to restaurants within 500 meters. However, the hotel should definitely have advanced restaurants and dining services for hotel guests. 
+
+![Hyatt-Regency-Dar-es-Salaam-The-Kilimanjaro-P087-Exterior-Evening 16x9](https://user-images.githubusercontent.com/25497706/70330631-eb52cb00-180b-11ea-84a9-e88d03299288.jpg)
+A picture of the grand Hyatt Regency Dar es Salaam, The Kilimanjaro
 
 #### [Back to Main Page](../index.md)
