@@ -26,8 +26,8 @@ Interestingly, the two islands are also different significantly both culturally 
 
 ### Data Collection
 For this project, I am going to use both DEM models:
-- ASTER Global Digital Elevation Model, distribute by NASA EOSDIS Land Processes DAAC.
-- NASA Shuttle Radar Topography Mission Global 1 arc second. 2013, distributed by NASA EOSDIS Land Processes DAAC.
+- ASTER Global Digital Elevation Model, distribute by NASA EOSDIS Land Processes DAAC, https://doi.org/10.5067/ASTER/ASTGTM.003.
+- NASA Shuttle Radar Topography Mission Global 1 arc second. 2013, distributed by NASA EOSDIS Land Processes DAAC, https://doi.org/10.5067/MEaSUREs/SRTM/SRTMGL1.003.
 
 Besides the DEM models, I am also going to use the .NUM files for these DEM data, which can help explain errors and differences 
 between data sources by telling us the sources of information for each location.
