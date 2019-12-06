@@ -50,5 +50,5 @@ Finally, using the tool **Channel Network**(Terrain Analysis->Channels), I get a
 ![final_result](https://user-images.githubusercontent.com/25497706/65726965-623d4c00-e084-11e9-9e29-8a0c403d6cf5.png)
 ![final_result_legend](https://user-images.githubusercontent.com/25497706/65726966-623d4c00-e084-11e9-9e0e-4cb96aa0be72.png)
 
-#### [Back to Main Page](../index.md)
+#### [Back to Main Page](index.md)
 
