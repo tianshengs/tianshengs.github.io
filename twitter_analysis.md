@@ -11,7 +11,6 @@ Hurrican Dorian was a powerful hurricane that was first formed in August 24th ov
 
 This graph shows the actual Dorian Hurricane's path in the United States:
 ![Screenshot-2019-12-4 Live Maps Tracking Hurricane Dorian’s Path](https://user-images.githubusercontent.com/25497706/70168429-d99be700-1696-11ea-9106-61c3765f5a20.png)
-
 [Map Source](https://www.nytimes.com/interactive/2019/09/06/us/hurricane-dorian-path-map-track.html): Matthew Bloch and Denise Lu (2019). Live Maps: Tracking Hurricane Dorian’s Path. *New York Times.*
 
 On September 4th, however, President of the United States Donald Trump presented a sharpied map of Hurrican Dorian, which shows that Alabama was one of the state that will be hit hard by Hurrican Dorian.However, as we see from the actual path of Dorian Hurricane, Alabama was not influenced by Dorian Hurricane that much. 
@@ -232,7 +231,6 @@ G*, or so-called Getis-Ord Statistic, is a useful tool for Hot Spot analysis.
 Below is how the G* score is calculated:
 
 ![GUID-AEFD71B5-BE33-42AB-84FB-AEE3FD5E2114-web](https://user-images.githubusercontent.com/25497706/70180707-8cc40a80-16ae-11ea-93f7-35866850b831.png)
-
 Image from ArcMap's [documentation on Hot Spot Analysis (Getis-Ord Gi*)](https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm) 
 
 The G* cluster algorithm was used to create spatial cluster maps of Tweets related to Dorian huricane in GeoDa. First of all, I create a spatial weights matrix using **Tools->Weights Manager**. Then, I created the local G* cluster statistic map of tweets per 10,000 people and the normalized tweet difference index that I used using **Space->local G* cluster map** and setted the variable to the specific column.
