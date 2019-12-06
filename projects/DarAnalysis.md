@@ -28,6 +28,7 @@ the subward layer can be added to QGIS and my PostGIS database.
 ### Method 
 **a. Data Analysis**
 I wrote [SQL codes](../queries/dar.sql) for my spatial analysis. Here are the specific steps:
+
   1. I selected all the points from `planet_osm_point` that are labelled as *"hotel"* or *"guest_house"* under the "tourism" column. These points are stored in a new table called **hotelindar**.
   1. I added a colulmn to the table **hotelindar** and updated the new field with the `subward` information in which each point is located.
   1. I calculated the number of hotels in each subward and store the information in a new table called **hotel_count**.
@@ -35,6 +36,7 @@ I wrote [SQL codes](../queries/dar.sql) for my spatial analysis. Here are the sp
   1. I added a column in **subward_detail** in which area of each subward is calculated in square kilometers.
   1. I created a new field in **subward_detail** to store the hotel density of each subward.
   1. I calculated the number of restaurants within 500 meters for each hotel. The result is stored in a new view **restaurant_accessibility**.
+  
 ```
 /*Written by Tiansheng Sun */
 
