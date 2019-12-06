@@ -92,7 +92,7 @@ I tried to use QGIS to help visualize the potential errors that I may encounter.
 
 #### Elevation/Steepness
 
-Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat land. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
+Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat lands. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
 
 **Steep/High elevation region**
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
@@ -102,7 +102,7 @@ Aster and SRTM data seem to be more consistent at higher elevation and steeper l
 
 #### Water body
 
-Both Aster and SRTM data seem to mass up inside a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land and because water routes through water bodies are kind of random. The program encountered here may be related to the problem that I had earlier with the ocean. However, as long as the points of entry and exit from the lake are consistent, then there should not be a big problem because after all, we can visualize a polygon water body layer on top of the rivers layer in this case, and the total volume and direction of water flow will still be consistent.
+Both Aster and SRTM data seem to mess up inside a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land and because water routes through water bodies are kind of random. The program encountered here may be related to the problem that I had earlier with the ocean. However, as long as the points of entry and exit from the lake are consistent, then there should not be a big problem because after all, we can visualize a polygon water body layer on top of the rivers layer in this case, and the total volume and direction of water flow will still be consistent.
 
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
 
