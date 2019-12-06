@@ -74,7 +74,7 @@
             if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 0.000000 ) {
                 return {
                 pane: 'pane_subward_detail_1',
-                opacity: 1,
+                opacity: 0.6,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
@@ -89,7 +89,7 @@
             if (feature.properties['hotel_density'] >= 0.000000 && feature.properties['hotel_density'] <= 1.648800 ) {
                 return {
                 pane: 'pane_subward_detail_1',
-                opacity: 1,
+                opacity: 0.6,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
@@ -104,7 +104,7 @@
             if (feature.properties['hotel_density'] >= 1.648800 && feature.properties['hotel_density'] <= 3.258300 ) {
                 return {
                 pane: 'pane_subward_detail_1',
-                opacity: 1,
+                opacity: 0.6,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
@@ -119,7 +119,7 @@
             if (feature.properties['hotel_density'] >= 3.258300 && feature.properties['hotel_density'] <= 5.137300 ) {
                 return {
                 pane: 'pane_subward_detail_1',
-                opacity: 1,
+                opacity: 0.6,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
@@ -134,7 +134,7 @@
             if (feature.properties['hotel_density'] >= 5.137300 && feature.properties['hotel_density'] <= 9.152850 ) {
                 return {
                 pane: 'pane_subward_detail_1',
-                opacity: 1,
+                opacity: 0.6,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
@@ -256,7 +256,7 @@
         });
         bounds_group.addLayer(layer_restaurant_accessibility_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'restaurant_accessibility<br /><table><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_00000700000.png" /></td><td>0.0000 - 7.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_700001400001.png" /></td><td>7.0000 - 14.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_1400002100002.png" /></td><td>14.0000 - 21.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_2100002800003.png" /></td><td>21.0000 - 28.0000</td></tr></table>': layer_restaurant_accessibility_2,'subward_detail<br /><table><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0000000.png" /></td><td>0.00 - 0.00</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0001651.png" /></td><td>0.00 - 1.65</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_1653262.png" /></td><td>1.65 - 3.26</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_3265143.png" /></td><td>3.26 - 5.14</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_5149154.png" /></td><td>5.14 - 9.15</td></tr></table>': layer_subward_detail_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'restaurant accessibility<br /><table><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_00000700000.png" /></td><td>0.0000 - 7.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_700001400001.png" /></td><td>7.0000 - 14.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_1400002100002.png" /></td><td>14.0000 - 21.0000</td></tr><tr><td style="text-align: center;"><img src="legend/restaurant_accessibility_2_2100002800003.png" /></td><td>21.0000 - 28.0000</td></tr></table>': layer_restaurant_accessibility_2,'subward_detail<br /><table><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0000000.png" /></td><td>0.00 - 0.00</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_0001651.png" /></td><td>0.00 - 1.65</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_1653262.png" /></td><td>1.65 - 3.26</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_3265143.png" /></td><td>3.26 - 5.14</td></tr><tr><td style="text-align: center;"><img src="legend/subward_detail_1_5149154.png" /></td><td>5.14 - 9.15</td></tr></table>': layer_subward_detail_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
         setBounds();
 		L.control.scale({imperial:false, metric:true}).addTo(map);
         </script>
