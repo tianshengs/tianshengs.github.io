@@ -106,7 +106,11 @@ I unchecked **visible** option for the hotel_accessbility layer so that we can s
 
 **c.Editing the Leaflet HTML page**
 
-Finally, once the Leaflet had been downloaded, I modified the inde.html file to change the symbology and content of my leaflet map. 
+Finally, once the Leaflet had been downloaded, I modified the index.html file to change the symbology and content of my leaflet map. Specifically:
+  1. Change the `map.attributioncontrol.SetPrefix` function to include my name and a link to my GitHub page. I also added appropriate credit for all layers.
+  1. Changed the styles and names of each vector layer, pop-up content and legend to better reflect their meaning.
+  1. Added a scale bar at the end of the document.
+  1. Customized the initial map extent for a better initial map extent.
 
 ### Result
 Here is the final [Leaflet map](../dsmmap/index.html) of the hotel accessibility of Dar es Salaam. The darker the subward, the higher its density
