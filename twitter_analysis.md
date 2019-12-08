@@ -277,7 +277,9 @@ The first map shows the area with significant high and low twitter activity with
 ![G_map4](https://user-images.githubusercontent.com/25497706/70108682-df9eb300-1617-11ea-88dc-53e0c1eaba89.png)
 
 The second map shows the changing significance with changing p value.
-![G_map3](https://user-images.githubusercontent.com/25497706/70108703-eaf1de80-1617-11ea-96ea-06c47b706d12.png)
+![G_map3](https://user-images.githubusercontent.com/25497706/70108703-eaf1de80-1617-11ea-96ea-06c47b706d12.png)'
+
+Although the normalized tweet difference index is good for a choropleth map, this analysis produced unpredictable results because of the negative input values.
 
 ### Analysis
 
