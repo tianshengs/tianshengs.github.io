@@ -125,5 +125,9 @@ St. Martin and Wing (2007) has provided a approach to not view GIS simply as a t
 
 This debate over GIS as a single entity also has the danger of producing a subject that is static, invariable and a singular technology (St. Martin and Wing , 2007). Indeed, ESRI has dominated the market since the 1980s and the use of the software is extremely expensive. This use of exclusive software to quantified, classified and optimized data to produce accurate and standard results can create technocracy and has posed a threat to the inclusiveness (Sieber, 2004). However, the development of open source GIS can provide a good way for a more engaged approach that Sieber (2004) suggested and heterdox GIS approach which St. Martin and Wing (2007) suggested are "open with alignments and experimentation". The development of open source software such as QGIS is free and people from all backgrounds can contribute to the construction of GIS, from example, to create a model, and people can also help each other to debug on online platform and forum. This collaborative approach of GIS challenges the hierarchical and institutional nature of GIS in the past and can create an environment that is more open, well-represented and innovative.
 
+**References**:
+Martin, K. St., & Wing, J. (2007). The Discourse and Discipline of GIS. *Cartographica: The International Journal for Geographic Information and Geovisualization, 42(3), 235–248. https://doi.org/10.3138/carto.42.3.235*
+Sieber, R. (2004). Rewiring for a GIS/2. *Cartographica: The International Journal for Geographic Information and Geovisualization, 39(1), 25–39. https://doi.org/10.3138/T6U8-171M-452W-516R*
+
 
 #### [Back to Main Page](index.md)
