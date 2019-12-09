@@ -97,8 +97,11 @@ After creating the model, I opened QGIS 3.8 to do the following:
   ![Captured](https://user-images.githubusercontent.com/25497706/70470143-67f9d980-1a98-11ea-87e9-79fc40f902b6.PNG)
 
 - Joined census data to Census Tract shapefile by opening the properties of the shapefile layer and using the Joins menu. To keep the data neet, I only selected the fields that I want to join: *latinx*, the column with the number of latino population and *total_pop* in each census tract, the column with the total number of population in the census tract. I joined the census data to Census Tract shapefile by the corresponding GEOID of each census tract, which is a unique feature in both files.
+
 - Calculated the percentage of Latino population in each census tract and stored the value in a new column using `field calculator`. 
+
 - Used the model to calculate the direction and distance from the center. I manually selected the three census tracts as city center for my analysis. 
+
 - Created Data Plotly plots as HTML to show my results. Data Plotly plots are dynamic code written for the internet and can be created using a Plugin in QGIS. For my analysis of the percentage of Hispanic population in San Juan Metropolitan Area, I created a scatterplot of distance and polar plot of direction.
 
 
