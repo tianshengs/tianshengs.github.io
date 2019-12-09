@@ -30,17 +30,25 @@ The `CASE` statement can be helpful to calculate fields based on a set of one or
 
 The problem that I faced is that the Execute SQL only worked with a single point, but not with selected feature data. Therefore, to get a single point from selected features, the user may now need to just run centroids and mean coordinates separately before they use my Model to calculate. 
 
-After updating the model, I downloaded the census-tract level shapefile and  of Puerto Rico from the [United States Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) and information of the Hispanic or Latino origin by race per census tract in Puerto Rico from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml). 
+After updating the model, I downloaded the Census Tracts shapefile and County Within Urban Area shapefile of Puerto Rico from the [United States Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) and information of the Hispanic or Latino origin by race per census tract in Puerto Rico from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml). 
 
 After I downloaded all the data, I oepned QGIS 3.8 to do the following:
 - Added the the Hispanic or Latino origin by race per census tract in Puerto Rico CSV file into QGIS. `Layer->Add Layer->Add Delimited Text Layer` is the best way to add CSV files into QGIS because it tries to detect data types correctly rather than assuming everything is a text string. I imported the layer with no geometry as a comma-delimited file.
-- Added the census-tract level shapefile of Puerto Rico into QGIS.
-- Join census data to census tract shapefile by opening the properties of the shapefile layer and using the Joins menu. To keep the data neet, I only selected the fields that I want to join.
+
+- Added the Census Tract shapefile and County within Urban Area shapefile of Puerto Rico into QGIS.
+
+- Selected the San Juan Metropolitan Area from the Census Tract shapefile and Use the QGIS function `Select by Location` to crop out the census tracts located within San Juan Metropolitan Area for analysis.
+
+Here is the cropped study area:
+
+![Captured](https://user-images.githubusercontent.com/25497706/70470143-67f9d980-1a98-11ea-87e9-79fc40f902b6.PNG)
+
+- Joined census data to Census Tract shapefile by opening the properties of the shapefile layer and using the Joins menu. To keep the data neet, I only selected the fields that I want to join: *latinx*, the column with the number of latino population and *total_pop* in each census tract, the column with the total number of population in the census tract. I joined the census data to Census Tract shapefile by the corresponding GEOID of each census tract, which is a unique feature in both files.
+- Calculated the percentage of Latino population in each census tract and stored the value in a new column using `field calculator`. 
 - Used the model to calculate the direction and distance from the center. I manually selected the three census tracts as city center for my analysis. 
 - Created Data Plotly plots as HTML to show my results. Data Plotly plots are dynamic code written for the internet and can be created using a Plugin in QGIS. For my analysis of the percentage of Hispanic population in San Juan Metropolitan Area, I created a scatterplot of distance and polar plot of direction.
 
 ## Results
-
 ![sanjuan](https://user-images.githubusercontent.com/25497706/68078465-4415ea80-fdac-11e9-970d-f1052a7b6d6d.png)
 
 This is a [graph](Plots/San_Juan_Plot_1.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and distance from central San Juan. As we can see from the graph, while a majority of the census tracts have over 95% of Hispanic population, the few census tracts relatively closer to San Juan has slightly more non-Hispanic population. 
