@@ -22,7 +22,7 @@ Here is the [geopackage](data/san_juan_analysis.gpkg) of data for the case study
 
 **a. Creating model using field calculator to calculate distance and direction**
 
-[Here](model/distance_from_point.model3) is my initial model using field calculator to calculate distance and direction. The user can define a city center as a point or selected features, from which a point with the medium coordinates of the centroids of all selected features can be calculated. Finally, the direction and distance from the city center point to the centroid of each feature in the shapefile is calculated with new fields in the attribute table (distance and direction) of the output. Finally, I created a documentation for the model that I created. 
+[Here](model/final_first_model.model3) is my initial model using field calculator to calculate distance and direction. The user can define a city center as a point or selected features, from which a point with the medium coordinates of the centroids of all selected features can be calculated. Finally, the direction and distance from the city center point to the centroid of each feature in the shapefile is calculated with new fields in the attribute table (distance and direction) of the output. Finally, I created a documentation for the model that I created. 
 
 ![initial](https://user-images.githubusercontent.com/25497706/70471759-d7bd9380-1a9b-11ea-8ea4-f8ab4796f784.PNG)
 
