@@ -4,12 +4,12 @@ Vulnerability analysis has become a very important topic in geographical analysi
 
 ### Data Source
 Data is collected from multiple sources:
-1. [The global flood risk layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=data&events=droughts&evcat=4&lang=eng) 
-2. [The Malawi drought physical exposure layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=extract&cat=1&lang=eng)
-3. [DHS Cluster Points](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).
-4. [DHS Survey Data](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).  
-5. [FEWSnet Livelihood Zones](https://fews.net/fews-data/335).
-6. [Major Lakes, from OpenStreetMap via MASDAP](http://www.masdap.mw/layers/geonode:major_lakes).
+- [The global flood risk layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=data&events=droughts&evcat=4&lang=eng) 
+- [The Malawi drought physical exposure layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=extract&cat=1&lang=eng)
+- [DHS Cluster Points](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).
+- [DHS Survey Data](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).  
+- [FEWSnet Livelihood Zones](https://fews.net/fews-data/335).
+- [Major Lakes, from OpenStreetMap via MASDAP](http://www.masdap.mw/layers/geonode:major_lakes).
 
 ### Reference article 
 The analysis for activity is based on the following reference article: 
