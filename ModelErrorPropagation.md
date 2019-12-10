@@ -96,7 +96,7 @@ I tried to use QGIS to help visualize the potential errors that I may encounter.
 
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
 
-Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat lands, although both SRTM and ASTER data did not sseem to pick up some river sections at steep regions close to their origins. Several factors may lead to this problem. If there is a rather thick canopie along the river bank, then the setallite imagery may not be able to pick up the elevation of the river bed. Moreover, the river bed might be steep enough and the setallite imagery was not able to pick up the steep evelation of the riverbed. 
+Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat lands, although both SRTM and ASTER data did not seem to pick up some river sections at steep regions close to their origins. Several factors may lead to this problem. If there is a rather thick canopie along the river bank, then the setallite imagery may not be able to pick up the elevation of the river bed. Moreover, the river bed might be steep enough and the setallite imagery was not able to pick up the steep evelation of the riverbed. 
 
 **Flat/Low elevation**
 
@@ -111,9 +111,9 @@ Despite water management system's importance to Balinese culture and society, we
 
 #### Water body
 
-Both Aster and SRTM data seem to mess up inside a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land and because water routes through water bodies are kind of random. The program encountered here may be related to the problem that I had earlier with the ocean. However, as long as the points of entry and exit from the lake are consistent, then there should not be a big problem because after all, we can visualize a polygon water body layer on top of the rivers layer in this case, and the total volume and direction of water flow will still be consistent.
-
 ![Crater Lake](https://user-images.githubusercontent.com/25497706/66488626-38b8f300-ea7c-11e9-9d10-98831fd190aa.png)
+
+Both Aster and SRTM data seem to mess up inside a water body, for example, at the crater lake. This may be caused by the fact that the program identify lakes as a piece of flat land and because water routes through water bodies are kind of random. The program encountered here may be related to the problem that I had earlier with the ocean. However, as long as the points of entry and exit from the lake are consistent, then there should not be a big problem because after all, we can visualize a polygon water body layer on top of the rivers layer in this case, and the total volume and direction of water flow will still be consistent.
 
 #### Flow accumulation
 From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
