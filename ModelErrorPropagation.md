@@ -92,13 +92,22 @@ I tried to use QGIS to help visualize the potential errors that I may encounter.
 
 #### Elevation/Steepness
 
-Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat lands. Moreover, there is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali. However, ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM.
-
 **Steep/High elevation region**
+
 ![High_elevation_comparison](https://user-images.githubusercontent.com/25497706/66488174-83863b00-ea7b-11e9-825c-1430262f3e60.png)
 
+Aster and SRTM data seem to be more consistent at higher elevation and steeper lands than at lower elevation and flat lands, although both SRTM and ASTER data did not sseem to pick up some river sections at steep regions close to their origins. Several factors may lead to this problem. If there is a rather thick canopie along the river bank, then the setallite imagery may not be able to pick up the elevation of the river bed. Moreover, the river bed might be steep enough and the setallite imagery was not able to pick up the steep evelation of the riverbed. 
+
 **Flat/Low elevation**
+
 ![Low elevation](https://user-images.githubusercontent.com/25497706/66488457-ebd51c80-ea7b-11e9-9ab7-1cf80355f151.png)
+
+There is a lack of sufficent data at extremely flat coastal areas, for example, in Southern Bali, although ASTER seem to give a more detailed, consistent, and comprehensive data at flat regions than SRTM. A possible cause that mess up the hydrological analysis in flat regions is the irrigation System. Bali in specific, is famous for its rice irrigation system. Called Subak, the Balinese water management system has not only been crucial to the Balinese agarian society, but is closely tied to Balinese tradition, religion, and Tri Hita Karana philosopny. The Water Temple of Pura Ulun Danu Batur (shown in Study area section), for example, is a part of the Balinese Subak System. Indeed, the Balinese Sabuk system was enlisted as a World Cultural heritage site in 2012.
+
+Despite water management system's importance to Balinese culture and society, we should be aware that this long cultural tradition and artifical ecosystem complicates the hydrology in the region. 
+
+![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg) 
+**Rice Terrace in Bali**
 
 #### Water body
 
@@ -108,13 +117,6 @@ Both Aster and SRTM data seem to mess up inside a water body, for example, at th
 
 #### Flow accumulation
 From the flow accumulation Grid difference data, both ASTER and SRTM data seem to be more consistent when the flow accumulation is small than when the flow accumulation is large. This makes sense because a small mistake may accumulate to a large one as flows accumulate.
-
-#### Irrigation System
-![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg)
-
-Another important factor that mess up the hydrological analysis in flat regions is the irrigation System. Bali in specific, is famous for its rice irrigation system. Called Subak, the Balinese water management system has not only been crucial to the Balinese agarian society, but is closely tied to Balinese tradition, religion, and Tri Hita Karana philosopny. The Water Temple of Pura Ulun Danu Batur (shown in Study area section), for example, is a part of the Balinese Subak System. Indeed, the Balinese Sabuk system was enlisted as a World Cultural heritage site in 2012.
-
-Despite water management system's importance to Balinese culture and society, we should be aware that this long cultural tradition and artifical ecosystem complicates the hydrology in the region. 
 
 #### [Back to Main Page](index.md)
 
