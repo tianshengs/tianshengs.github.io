@@ -110,7 +110,7 @@ This is the choropleth map showing the percentage of Hispanic within each census
 ![sanjuan](https://user-images.githubusercontent.com/25497706/70475798-536f0e80-1aa3-11ea-8253-59d5aae758f2.png)
 
 
-This is a [graph](Plots/San_Juan_Plot_1.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and distance from central San Juan. As we can see from the graph, while a majority of the census tracts have over 95% of Hispanic population, the few census tracts relatively closer to San Juan has slightly more non-Hispanic population. The city center, moreover, has only 68% of Hispanic population.
+This is a [graph](Plots/San_Juan_Plot_1.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and distance from central San Juan. As we can see from the graph, while a majority of the census tracts have over 95% of Hispanic population, the few census tracts relatively closer to San Juan has slightly more non-Hispanic population. One census tract of the city center, moreover, has only 68% of Hispanic population.
 
 This is a [graph](Plots/San_Juan_Plot_2.html) that I created using Data Plotly that illustrates the relationship between percentage of Hispanic people and direction from central San Juan. Because central San Juan is located on a small island in the Northern coast of Puerto Rico, almost all of the other census tracts are located to the south and east of central San Juan. Most of the census tracts to the South and Southeast has over 95% of Hispanic population, while a few coastal census tracts to the east of San Juan have a slightly lower percentage. 
 
