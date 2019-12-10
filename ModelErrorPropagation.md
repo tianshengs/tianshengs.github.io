@@ -107,6 +107,7 @@ There is a lack of sufficent data at extremely flat coastal areas, for example, 
 Despite water management system's importance to Balinese culture and society, we should be aware that this long cultural tradition and artifical ecosystem complicates the hydrology in the region. 
 
 ![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg) 
+
 **Rice Terrace in Bali**
 
 #### Water body
