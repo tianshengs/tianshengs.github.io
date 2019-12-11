@@ -1,15 +1,19 @@
 # Vulnerability of Malawi: looking into uncertainty and reproducibility of geographic research
 ### Introduction
-Vulnerability analysis has become a very important topic in geographical analysis, and can be important in developing countries, including those in sub-Saharan Africa. Malcomb et al.(2014) offered a way to conduct vulnerability modeling analysis in Malawi, which provides a framework to determine what drives vulnerability at a household level, maps the regions of Malawi that are under the highest level of vulnerability, and assists other vulnerable developing countries in sub-Saharan Africa. The project aims to replicate Malcomb et al.'s map of vulnerability to climate change in Malawi and try to understand the uncertainty and reproducitility of vulnerability geographical research, a topic that has becoming increasingly important in critical GIS and geography.
+Vulnerability analysis has become a very important topic in geographical analysis, and can be important in developing countries, including those in sub-Saharan Africa. Malcomb et al. (2014) offered a way to conduct vulnerability modeling analysis in Malawi, which provides a framework to determine what drives vulnerability at a household level, maps the regions of Malawi that are under the highest level of vulnerability, and assists other vulnerable developing countries in sub-Saharan Africa. The project aims to replicate Malcomb et al.'s map of vulnerability to climate change in Malawi and try to understand the uncertainty and reproducitility of vulnerability geographical research, a topic that has becoming increasingly important in critical GIS and geography.
 
 ### Data Source
-Data is collected from multiple sources:
-- [The global flood risk layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=data&events=droughts&evcat=4&lang=eng) 
-- [The Malawi drought physical exposure layer from UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=extract&cat=1&lang=eng)
-- [DHS Cluster Points](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).
-- [DHS Survey Data](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm).  
+
+The following data sources from multiple sources are used to reproduce Malcomb et al.'s map. However, the multiple data layers may be different from what Malcomb et al. has used or reflect the data in different periods. 
+
+- The global flood risk layer from [UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?) for estimated physical exposure to flooding events.
+  We use the global flood risk layer instead the one specifically for Malawi because the one for Malawi contained errors and did not actually match up to where the country was.
+- The Malawi drought physical exposure layer from [UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=extract&cat=1&lang=eng) for estimated physical exposure to drought events. 
+- DHS Cluster Points from [the DHS website](https://www.dhsprogram.com/Data/).
+- DHS Survey Data from [the DHS website](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm). 
 - [FEWSnet Livelihood Zones](https://fews.net/fews-data/335).
 - [Major Lakes, from OpenStreetMap via MASDAP](http://www.masdap.mw/layers/geonode:major_lakes).
+This layer is used for the final map to show the major lakes of Malawi.
 
 ### Reference article 
 The analysis for activity is based on the following reference article: 
