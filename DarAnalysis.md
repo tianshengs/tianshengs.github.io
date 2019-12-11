@@ -14,8 +14,8 @@ and most of the data used in this activity is from OpenStreetMap. Additional inf
 Resilience Academy. 
 
 Here are the specific data shpafiles that I used for my analysis:
-1. planet_osm from **OpenStreetMap**
-2. subwards from **Resilience Academy**
+- planet_osm from **OpenStreetMap**
+- subwards from **Resilience Academy**
 
 The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
 and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
@@ -99,7 +99,7 @@ group by a.osm_id, a.way
 
 Once I finished the data analysis step, I created a leaflet map to visualize the final product of my analysis. The two layers that I included for my final map are **subward_detail**, which shows the density of hotels in each subward as a polygon feature and **restaurant_accessibility**, which shows each hotel as a point feature. Before I exported a map to the internet, I did the following steps to the two layers in QGIS:
 
-  1. I exported feature layers with minimum of attribute that I wanted to include as final result and symbolized points as simple marker circles for the ease of translating to Leaflet *circleMarker* symbols. For example, I only included the following columns for **subward_detail**:fid, count, area and hotel_density. I only included the following columns for **hotel accessibility**: sum.
+  1. I exported feature layers with minimum of attribute that I wanted to include as final result and symbolized points as simple marker circles for the ease of translating to Leaflet *circleMarker* symbols. For example, I only included the following columns for **subward_detail**: fid, count, area and hotel_density. I only included the following columns for **hotel accessibility**: sum.
   1. I included a base layer by using **QuickMapService** in QGIS to add thd **OpenStreetMap** layer.
   
 Finally, I used the `QGIS2WEB` plugin and setted the exporter to Leaflet to create a leaflet. In the **Layers and Groups** tab settings, 
@@ -119,7 +119,7 @@ of hotel is. The darker and larger each dot (representing hotel) is, the more re
 each layer, and also compare my result with the OpenStreetMap base map underneath.
 
 First of all, many hotels are located in the city center and along major roads. As we can see, the city center has a relatively high density
-of hotels, although the Kariakoo district next to it has a higher density.Moreover, many hotels are also clustered along Morogoro road and Uhuru Street.
+of hotels, although the Kariakoo district next to it has a higher density. Many hotels are also clustered along Morogoro road and Uhuru Street.
 The CBD and Embassy district to the east of the city center, on the other hand, has much fewer hotels. 
 
 Moreover, hotels located in subwards with higher density of hotels (city center, Kariakoo and along Morogoro Road) also get access to more restaurants
