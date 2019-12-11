@@ -17,7 +17,7 @@ Here are the specific data shpafiles that I used for my analysis:
 - planet_osm from **OpenStreetMap**
 - subwards from **Resilience Academy**
 
-The tool used for this activity is PostGIS in QGIS software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
+The tool used for this activity is PostGIS in QGIS 3.8.1 software. First of all, the OpenStreetMap database was downloaded from the [website](https://www.openstreetmap.org)
 and stored as an `.osm file`. Then, I ran the [`convertOSM.bat`](osm_script/convertOSM.bat) script that parsed through the dsm_om.osm file and load relevant data into my 
 PostGIS database. The data that I used is the planet_osm_point data, which contains points with information of their geometry and information.
 Now, the OpenStreetMap data is ready to use!
