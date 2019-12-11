@@ -10,7 +10,7 @@ This is my introduction into open source GIS and the use of QGIS for GIS analysi
 
 ![lede puerto-rico-1](https://user-images.githubusercontent.com/25497706/70465955-151c2400-1a90-11ea-9f7f-ded36b96ff17.jpg)
 
-San Juan is the largest city of Puerto Rico. Located in the North coast of Peurto Rico, it is a lovely old city with around 400,000 people and 2 million in its metropolitan area. Although the population of Puerto Rico is highly hispanic, we might expect to see some more diversity in this large metropolitan city. Specifically, it is interesting to see how the percentage of Hispanic people changes by distance or direction from central San Juan. 
+San Juan is the largest city of Puerto Rico. Located in the North coast of Peurto Rico, it is a lovely old city with around 400,000 people in its core and 2 million in its metropolitan area. Although the population of Puerto Rico is highly hispanic, we might expect to see some more diversity in this large metropolitan city. Specifically, it is interesting to see how the percentage of Hispanic people changes by distance or direction from central San Juan. 
 
 ### Data
 
@@ -41,17 +41,17 @@ degrees( azimuth(  make_point(  @Mean_coordinate_s__OUTPUT_maxx,  @Mean_coordina
 
 Then, I modified and updated the [model](model/new_distance_from_point.model3) by doing the following:
 
-- Add a Help webpage to my model.
+- Added a Help webpage to my model.
 
   The "Documentation help URL" is especially helpful, which directed the users to my Github page. I also added one for my original model.
 
-- Use Execute SQL to calculate distance.
+- Used Execute SQL to calculate distance.
   ```
   SELECT*, st_distance(centroid(st_transform(geometry, 4326)), (Select st_transform(geometry, 4326) from input1), TRUE) as  DistSQL
   FROM input2
   ```
 
-- Use `CASE` statement to classify the direction data into N, E, S, W.
+- Used `CASE` statement to classify the direction data into N, E, S, W.
 The `CASE` statement can be helpful to calculate fields based on a set of one or more conditions. For my model, I used the `CASE` statement to classify the direction data into N, E, S, W based on the direction of the data: 
   ```
   CASE
@@ -62,7 +62,7 @@ The `CASE` statement can be helpful to calculate fields based on a set of one or
   END
   ```
 
-- Apply the `transform` function of SQL to calculate azimuth while transforming it to the World Mercator projection (EPSG:54004).
+- Applied the `transform` function of SQL to calculate azimuth while transforming it to the World Mercator projection (EPSG:54004).
   ```
   degrees( azimuth( 
 
@@ -86,7 +86,7 @@ The problem that I faced is that the Execute SQL only worked with a single point
 
 After creating the model, I opened QGIS 3.8.1 to do the following:
 
-- Added the the Hispanic or Latino origin by race per census tract in Puerto Rico CSV file into QGIS. `Layer->Add Layer->Add Delimited Text Layer` is the best way to add CSV files into QGIS because it tries to detect data types correctly rather than assuming everything is a text string. I imported the layer with no geometry as a comma-delimited file.
+- Added the Hispanic or Latino origin by race per census tract in Puerto Rico CSV file into QGIS. `Layer->Add Layer->Add Delimited Text Layer` is the best way to add CSV files into QGIS because it tries to detect data types correctly rather than assuming everything is a text string. I imported the layer with no geometry as a comma-delimited file.
 
 - Added the Census Tract shapefile and County within Urban Area shapefile of Puerto Rico into QGIS.
 
@@ -96,7 +96,7 @@ After creating the model, I opened QGIS 3.8.1 to do the following:
 
   ![Captured](https://user-images.githubusercontent.com/25497706/70470143-67f9d980-1a98-11ea-87e9-79fc40f902b6.PNG)
 
-- Joined census data to Census Tract shapefile by opening the properties of the shapefile layer and using the Joins menu. To keep the data neet, I only selected the fields that I want to join: *latinx*, the column with the number of latino population and *total_pop* in each census tract, the column with the total number of population in the census tract. I joined the census data to Census Tract shapefile by the corresponding GEOID of each census tract, which is a unique feature in both files.
+- Joined census data to Census Tract shapefile by opening the properties of the shapefile layer and using the Joins menu. To keep the data neat, I only selected the fields that I want to join: *latinx*, the column with the number of latino population and *total_pop* in each census tract, the column with the total number of population in the census tract. I joined the census data to Census Tract shapefile by the corresponding GEOID of each census tract, which is a unique feature in both files.
 
 - Calculated the percentage of Latino population in each census tract and stored the value in a new column using `field calculator`. 
 
