@@ -99,6 +99,7 @@ dorianWords %>%
 ```
 
 **b. association of common keywords**
+
 To get the association of coomon keywords, I first used the function `unnest_tokens` to get word pairs from all tweets of interest and used the function `seperate` to split the column into two. Then, I used the `count` function to count the number of associations for each word and sorted the data frame based on the number of associations. Finally, I created the graph of a word cloud with space indicating association for all words with more than 30 instances using `ggraph`.
 
 Here is the specific R code that I ran to get my graph.
@@ -151,7 +152,7 @@ dbWriteTable(con,'counties',counties, overwrite=TRUE)
 
 #### (2). SQL spatial analysis
 
-Once I have uploaded all data tables into my PostGIS database, I conducted spatial analysis in QGIS with SQL queries. First of all, I added geometry to my three data frames and transformed them to USA Contiguous Lambert Conformal Conic projection. Then, since I wanted to look at only counties in Eastern United States, I deleted the Western states from the census data layer. After that, I counted the number of each type of tweet (dorian and november) by county and normalized the data using the following two methods:
+Once I have uploaded all data tables into my PostGIS database, I conducted spatial analysis in QGIS 3.8.1 with SQL queries. First of all, I added geometry to my three data frames and transformed them to USA Contiguous Lambert Conformal Conic projection. Then, since I wanted to look at only counties in Eastern United States, I deleted the Western states from the census data layer. After that, I counted the number of each type of tweet (dorian and november) by county and normalized the data using the following two methods:
 
 **a. the number of tweets per 10,000 people**
 
@@ -243,7 +244,7 @@ In GeoDa, I created spatial cluster map of tweets related to Dorian hurricane us
 
 From the graph, it is interesting to see that "alabama", "sharpiegate", "trump", "donaldtrump" as the 3rd, 4th, 6th and 7th most common words of all Tweets of interest, and only "hurricane" and "dorian" have significantly more appearence in all tweets. Although "carolina", "north" and "florida" are also among the top 20 words that appeared, they only ranked 13th, 19th and 14th.
 
-#### 2. A graph of association of common keywords in tweet content during Dorian storm with more than 30 instances
+**2. A graph of association of common keywords in tweet content during Dorian storm with more than 30 instances**
 
 ![word_association](https://user-images.githubusercontent.com/25497706/70109428-dca4c200-1619-11ea-94e0-3b2f1bfc0dc1.png)
 
@@ -251,13 +252,13 @@ From the graph, we can see that "alabama" is extremely close to the word "dorian
 
 #### Spatial Analysis Graphs
 
-#### 3. Heatmap (Kernel Density) of tweet activities on Durian Hurricane
+**3. Heatmap (Kernel Density) of tweet activities on Durian Hurricane**
 
 ![heatmap](https://user-images.githubusercontent.com/25497706/70110865-65256180-161e-11ea-866f-933db7927711.png)
 
 The heat map shows the kernel density of tweet activities on Durian Hurricane. Areas with higher values, meaning a higher proportion of twitter activity, are shown in darker red and areas with lower values, meaning a lower proportion of twitter activity, are shown in white color. We can see that there was a specifically high amount of twitter activity in the District of Columbia and coastal counties of North and South Carolina, Virgnia and Massachusetts, regions that were struck by Hurricane Dorian. The Midwest and the Deep South, including Alabama, had a relatively low amount of twitter activity.
 
-#### 4. Spatial hotspot maps (G*) of tweets per 10,000 people during the storm by county
+**4. Spatial hotspot maps (G*) of tweets per 10,000 people during the storm by county**
 
 The first map shows the area with significant high and low twitter activity with p = 0.05.
 ![G_map](https://user-images.githubusercontent.com/25497706/70108331-11634a00-1617-11ea-8087-f1db5e6e7dea.png)
@@ -281,7 +282,7 @@ Moreover, Twitter analysis using Twitter data may not be the most reproducible b
 
 We also have to realize that only approximately 1-2% of all tweets include geographic information and this fact make us question if the tweets can represent the overall tweet activities over Dorian hurricane (Wang et al., 2016). Although we can get a large enough data set for analysis, like what I did for this project, we surely ignored a lot of other tweets for spatial analysis. For example, we do not know if people who live in counties affected by Dorian Hurricanes are more likely to tag themselves compared to a random people in the Midwest. The geographic information used in Twitter is also not very precise. The geospatial information of tweets are defined by a bounding box, using a group of four coordinates to define each specific geographic location. The bounding box may be highly imprecise when we, for example, analyze a place that involves borders. Therefore, we have to be well aware of the limitation of geogrpahic information of Twitter data before we conduct any geography-related projects using Twitter data. 
 
-Elwood et al. (2012) pointed out that the data of Volunteered Geographic Information, including Social Media data, often does not include traditional methods of accuracy or inaccuracy and data quality is a primary issue with this kind of data. However, in many situations, especially emergency events, social media data like Tweets may be beneficial because these data are usually much quicker than the official reports (Elwood et al., 2012). These information allow people to quickly response to these events, such as wildfire events, and take actions to evacuate and save lives. For example, in Wang et al. (2016)'s research, they looked at the most frequent words related to wildfire in May 2014 when a large scale of fire happened in California and the most frequent word is "evacuate", which is strongly related to the second most frequent word "home". Indeed, Want et al. (2016) points out specific tweets that inform other people for evacuate from homes. Therefore, despite its potential accuracy, Social Media data with geographic information can be especially important to our understanding of hazards and emergency events.
+Elwood et al. (2012) pointed out that the data of Volunteered Geographic Information, including Social Media data, often does not include traditional methods of accuracy or inaccuracy and data quality is a primary issue with this kind of data. However, in many situations, especially emergency events, social media data like tweets may be beneficial because these data are usually much quicker than the official reports (Elwood et al., 2012). These information allow people to quickly response to these events, such as wildfire events, and take actions to evacuate and save lives. For example, in Wang et al. (2016)'s research, they looked at the most frequent words related to wildfire in May 2014 when a large scale of fire happened in California and the most frequent word is "evacuate", which is strongly related to the second most frequent word "home". Indeed, Want et al. (2016) points out specific tweets that inform other people for evacuate from homes. Therefore, despite its potential accuracy, Social Media data with geographic information can be especially important to our understanding of hazards and emergency events.
 
 **Reference**: 
 
