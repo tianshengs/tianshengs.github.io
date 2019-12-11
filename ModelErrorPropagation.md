@@ -108,7 +108,7 @@ Despite water management system's importance to Balinese culture and society, we
 
 ![news_29065_1421578008](https://user-images.githubusercontent.com/25497706/70352014-32ef4c00-1838-11ea-976b-ff500f267968.jpg) 
 
-**Rice Terrace in Bali**
+Rice Terrace in Bali
 
 #### Water body
 
