@@ -43,7 +43,7 @@ Before I added all the scores together, I used the GRASS `r.Quantile` and `r.Rec
 
 The `r.Quantile` function calculates the quantile for an input layer and saves the result as a **.html** file. I setted the `Input raster layer` as the drought layer, and changed `Number of quantiles` to 5. It is important to open the `Advanced Parameters` and check the `Generate recode rules based on quantile-defined intervals`.
 
-After running the function, I opened the **.html** file and saved it in this [**.txt file**](data/quantile.txt). I then ran the `r.recode` function with the `Input raster layer` being the drought layer and `File containing recode rules` as this **.txt file** and the raster layer has been reclasified into quantile classes 1-5. 
+After running the function, I opened the **.html** file and saved it in this [**.txt file**](data/quantile.txt). I then ran the `r.recode` function with the `Input raster layer` being the drought layer and `File containing recode rules` as this **.txt file** and the raster layer has been reclassified into quantile classes 1-5. 
 
 **e. Raster Calculator for final result**
 
