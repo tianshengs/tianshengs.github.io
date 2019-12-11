@@ -34,7 +34,7 @@ The foundation for Malcomb et al.'s vulnerability model was the socioeconomic da
 
 ![Methodology](https://user-images.githubusercontent.com/25497706/68998207-70863800-087d-11ea-905b-a939bb4eac95.PNG)
 
-**b. SQL for resiilience score**
+**b. SQL for resilience scores**
 
 Due to a lack of data of the livelihood sensitivity category, we were able to only replicate 80% of the map of vulnerability to climate change in Malawi. Because of a data accessbility issue, the entire class has decided to do the Adaptive Capacity part together under professor's account with each of us providing solutions and SQL quries to the analysis. Our initial approach of normalizing each individual indicator is to use `NTILE()` function in SQL quries. However, NTILE will break all rows into approximately equal groups and may assign rows with the same value into different quantile. Therefore, we converted all the values first to a percent rank, and then uses `NTILE()` to normalize the percentile rank value into zero to five. Finally, we have collectively calculated the adaptive capacity scores for each traditional authority of Malawi. A traditional authority with a higher score means a higher resilience. [Here](SQL_quries/vulnerability.sql) is the SQL code that we wrote collaboratively as a class.
 
