@@ -14,7 +14,7 @@ San Juan is the largest city of Puerto Rico. Located in the North coast of Peurt
 
 ### Data
 
-I downloaded the **Census Tracts** shapefile and **County Within Urban Area** shapefile of Puerto Rico from the [United States Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) and information of the Hispanic or Latino origin by race per census tract in Puerto Rico from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml). The **County Within Urban Area** shapefile is used to crop out the San Juan study area from the **Census Tracts8* shapefile.
+I downloaded the **Census Tracts** shapefile and **County Within Urban Area** shapefile of Puerto Rico from the [United States Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) and information of the Hispanic or Latino origin by race per census tract in Puerto Rico from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml). The **County Within Urban Area** shapefile is used to crop out the San Juan study area from the **Census Tracts** shapefile.
 
 Here is the [geopackage](data/san_juan_analysis.gpkg) of data for the case study, including the original data that I downloaded and the shapefiles that I created through the process.
 
@@ -84,7 +84,7 @@ The `CASE` statement can be helpful to calculate fields based on a set of one or
 The problem that I faced is that the Execute SQL only worked with a single point, but not with selected feature data. Therefore, to get a single point from selected features, the user may now need to just run centroids and mean coordinates separately before they use my Model to calculate. 
 
 
-After creating the model, I opened QGIS 3.8 to do the following:
+After creating the model, I opened QGIS 3.8.1 to do the following:
 
 - Added the the Hispanic or Latino origin by race per census tract in Puerto Rico CSV file into QGIS. `Layer->Add Layer->Add Delimited Text Layer` is the best way to add CSV files into QGIS because it tries to detect data types correctly rather than assuming everything is a text string. I imported the layer with no geometry as a comma-delimited file.
 
