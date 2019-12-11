@@ -58,6 +58,9 @@ Finally, for the final result, I used raster calculator to combine the final res
 Note that because a high score for capacity correlates to a low vulnerability, I inverted the score by subtracting it from its maximum possible score 2 (40% of 5).
 
 ### Result
+
+![Malawi_resilience](https://user-images.githubusercontent.com/25497706/70582111-57745c80-1b87-11ea-8a02-7b465ca96d28.png)
+
 ![malawi_vulnerability_result](https://user-images.githubusercontent.com/25497706/69486831-160d4e80-0e1e-11ea-865c-f45c94e6de52.png)
 
 ### Discussion
