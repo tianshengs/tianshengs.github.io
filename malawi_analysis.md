@@ -5,16 +5,11 @@ Vulnerability analysis has become a very important topic in geographical analysi
 ### Data Source
 
 - The global flood risk layer from [UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?) for risk to flooding events.
-  We use the global flood risk layer instead the one specifically for Malawi because the one for Malawi contained errors and does not actually match up to where the country is.
-  
+  We use the global flood risk layer instead the one specifically for Malawi because the one for Malawi contained errors and does not actually match up to where the country is. 
 - The Malawi drought physical exposure layer from [UNEP Global Risk Map](https://preview.grid.unep.ch/index.php?preview=extract&cat=1&lang=eng) for estimated physical exposure to drought events.
-
 - DHS Cluster Points from [the DHS website](https://www.dhsprogram.com/Data/).
-
 - DHS Survey Data from [the DHS website](https://dhsprogram.com/What-We-Do/GPS-Data-Collection.cfm). 
-
 - [FEWSnet Livelihood Zones](https://fews.net/fews-data/335).
-
 - [Major Lakes, from OpenStreetMap via MASDAP](http://www.masdap.mw/layers/geonode:major_lakes). This layer is used for the final map to show the major lakes of Malawi.
 
 The above data sources from multiple sources were used to reproduce Malcomb et al.'s map. However, the multiple data layers may be different from what Malcomb et al. used or reflect the data in different periods. For example, I used the global flood risk layer because Malcomb et al. mentioned so in the methodology part; however, he also used the word " phsyical exposure" frequently, and in fact "physical exposure" is another layer that UNEP Global Risk Map offers for flooding events. This can create confusing points in the actual data that he used for his research.
