@@ -39,7 +39,7 @@ The shapefile layer with the calculated Adaptive Capacity score has an extent la
 
 **d. GRASS functions to reclassify drought layer**
 
-Before I added all the scores together, I used the GRASS `r.Quantile` and `r.Recode` algorithms in QGIS3.8.1 with GRASS 7.6.1 to reclassify the drought layer to a scale of 1 to 5. Remeber that the two algorithms are GRASS fucntiosn and can only be used in QGIS with GRASS. 
+Before I added all the scores together, I used the GRASS `r.Quantile` and `r.Recode` algorithms in QGIS 3.8.1 with GRASS 7.6.1 to reclassify the drought layer to a scale of 1 to 5. Remember that the two algorithms are GRASS fucntions and can *only* be used in QGIS with GRASS. 
 
 The `r.Quantile` function calculates the quantile for an input layer and saves the result as a **.html** file. I setted the `Input raster layer` as the drought layer, and changed `Number of quantiles` to 5. It is important to open the `Advanced Parameters` and check the `Generate recode rules based on quantile-defined intervals`.
 
