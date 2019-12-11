@@ -85,6 +85,7 @@ The lack of a methodological attention to the weighting in Malcomb et al.'s pape
 Moreover, the same index can produce distinct patterns of vulnerability at different scales (Tate, 2012). For Malawi, Malcomb et al (2014) analyzed the vulnerability in the level of traditional authorities of Malawi. However, traditional authority is only a Malawian thing, and if we conduct vulnerability in another country, then the size of districts and scale of measurement may be different from that of Malawi's. Therefore, even if we can use the same indexes for a different place, we cannot simply compare the result from the new region with the one from Malawi. 
 
 **Reference**:
+
 Tate, E. (2012). Social vulnerability indices: a comparative assessment using uncertainty and sensitivity analysis. *Natural Hazards, 63(2), 325-347.*
 
 #### [Back to Main Page](index.md)
