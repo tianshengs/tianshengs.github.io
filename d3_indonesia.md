@@ -54,9 +54,13 @@ Many thanks the various tutorials and map examples that I have referenced to lea
 
 ## Steps for D3.js Visualization
 
-**a.create a html file**
+#### 1. Setting up the map
 
-First of all, I created a `.html` file and added the D3 Version 5 library into the `<head> section` of the html file. Then, I created `map.css` file, a file that stores the style formatting of various html elements, to which is pointed from the `<head> section` of the html file.  
+First of all, I created a `.html` file and added the D3 Version 5 library into the `<head> section` of the html file. Then, I created `map.css` file, a file that stores the style formatting of various html elements, to which is pointed from the `<head> section` of the html file. 
+
+I then created an `svg` element in the `<body> section` of the html file with width 1500 (pixel), height 700 (pixel) and background color with `"#c9e8fd"`. D3.js draws visualizations on a SVG image element. The SVG element is like a canvas to which you can create a map from. To learn more about SVG, refer to this [tutorial](https://www.tutorialspoint.com/d3js/d3js_introduction_to_svg.htm).
+
+After that, I used `d3.geoPath` function creates a new geographic path generator and `d3.geoMercator()` to specify Mercator projection for the created geopath.To learn more about geoPath and projections, refer to this [d3geo Github page](https://github.com/d3/d3-geo). 
 
 ```
 <!doctype html>
@@ -68,27 +72,24 @@ First of all, I created a `.html` file and added the D3 Version 5 library into t
 	<link rel="stylesheet" type="text/css" href="map.css">
 	<style></style>
 </head>
-```
-
-**b.Add a SVG image**
-
-D3.js draws images on a SVG image element. The SVG element is like the canvas to which you can create a map from. To learn more about SVG, refer to this [tutorial](https://www.tutorialspoint.com/d3js/d3js_introduction_to_svg.htm).
-
-For my map, I created an `svg` element in the `<body> section` of the html file with width 1500 (pixel) and height 700 (pixel). Then, I set the background color to `"#c9e8fd"`.
-
-```
 <body>
-	<script type="text/javascript">
-  
-  var width = 1500;
-  var height = 700;
+    <script type="text/javascript">
+	var width = 1500;
+	var height = 700;
+	
 	//Referenced from: http://datawanderings.com/2018/10/28/making-a-map-in-d3-js-v-5/
+	//create the svg element
 	var svg = d3.select("body")
-	    .append("svg").attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", "0 0 " + width + " " + height)
-			.style("background","#c9e8fd")
-      .classed("svg-content", true);
-            
-  </script>
+  		.append("svg").attr("preserveAspectRatio", "xMinYMin meet")
+        	.attr("viewBox", "0 0 " + width + " " + height)
+		.style("background","#c9e8fd")
+        	.classed("svg-content", true);
+		
+	//define projection	
+	var projection = d3.geoMercator().translate([width/2, height/2]).scale(1800).center([118,-3]);
+	var path = d3.geoPath().projection(projection);
+    </script>
 </body>
 ```
+
+#### 2.Loading data
