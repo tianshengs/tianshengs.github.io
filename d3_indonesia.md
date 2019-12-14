@@ -231,7 +231,7 @@ div.tooltip {
 
 #### 4. draw the labels 
 
-After writing code that draws the map, I worked on the part of the code that appends the labels of each province in `Promise.all()` function. I appended the text features to `svg` and set the text as the Bahasa Indonesia name for each province feature. For two specific provinces, Daerah Khusus Ibukota Jakarta and Bangka Belitung, I have simplified their names to make my map more readable. I then set the `x` and `y` coordinates of each text based on `properties.longitude` and `d.properties.latitude` values stored for each province feature. I learned how to do this from this tutorial: [Making a Map in D3.js v.5](http://datawanderings.com/2018/10/28/making-a-map-in-d3-js-v-5/).
+After writing code that draws the map, I worked on the part of the code that appends the labels of each province in `Promise.all()` function. I appended the text features to `svg` and set the text as the Bahasa Indonesia name for each province feature. For two specific provinces, Daerah Khusus Ibukota Jakarta and Bangka Belitung, I have simplified their names to make my map more readable. I then based the `x` and `y` coordinates of each text on `properties.longitude` and `d.properties.latitude` values stored for each province feature and moved each province text around to better fit my map. I learned how to do this from this tutorial: [Making a Map in D3.js v.5](http://datawanderings.com/2018/10/28/making-a-map-in-d3-js-v-5/).
 
 ```
 		// add labels
@@ -275,6 +275,7 @@ After writing code that draws the map, I worked on the part of the code that app
 				}
 			})
 			.attr("y", function(d) {
+				//move each text feature around to better fit the map
 				if (d.properties.name_id == "Daerah Khusus Ibukota Jakarta"){
 					return projection([d.properties.longitude, d.properties.latitude])[1];
 				} else if (d.properties.name_id == "Bali") {
@@ -351,7 +352,7 @@ Finally, I appeneded a new svg each for my legend and title. The code for my leg
 		.text(function(d) { return d; });
 ```
 
-Finally, I updated the corresponding .css file:
+Finally, I updated the corresponding `.css` file:
 ```
 .title {
 	position:absolute;
@@ -365,3 +366,6 @@ Finally, I updated the corresponding .css file:
 	top:850px;
 }
 ```
+
+## Result
+[Here](Plots/test.html) is my result map and corresponding [css file](Plots/map.css). 
