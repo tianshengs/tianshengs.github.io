@@ -93,3 +93,275 @@ After that, I used `d3.geoPath` function creates a new geographic path generator
 ```
 
 #### 2.Loading data
+
+After setting up the svg element and geoPath, I loaded the `geojson` and `csv` files into the file. 
+The `geojson` file does not contain information of the percentage of Christian population of each province. To use the data for mapping purposes, I ran the following for loop to store the christian percentage data into a dictionary that stores `province name` as key and `percentage` as value. 
+
+```
+	var christian_dict = {};
+	
+	//get the percentage population data and store in christian_dict
+	var christian = d3.csv("religion.csv").then(function(d){
+		for (var i = 0; i < d.length; i++){
+			christian_dict[d[i].Province] = [d[i].Percentage];
+		}
+	});
+		
+	//get the geojson file
+	var indonesia = d3.json("indonesia_province.geojson");
+```
+
+#### 3. draw the map
+
+**a. Introductory steps**
+
+To append the geojson feature data onto the svg canvas, d3 v.5 allows users to create a promise, which according to this [tutorial](http://datawanderings.com/2018/08/15/d3-js-v5-promise-syntax-examples/) allows the functions to refer to later on and allows the dataset to be used before it is fully generated. The [`Promise.all()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) function, moreover, returns a single promise when all the passed-in promises have been fulfilled. Although for my map, I am visualizing data only from the geojson file, I used this function to pass in data from the `geojson` dataset. 
+
+Within the `Promise.all()` function, I appended the `geopath` to `svg` by setting data as each province feature of geojson. I have decided to divide all provinces into four groups anda fill each feature based on quantile of percentage value. I calculated the quantile values in `Excel` in my `.csv` file and got the following values:
+```
+quantile1 (25%) : 0.016655
+quantile2 (50%) : 0.027265
+quantile3 (75%) : 0.164778
+```
+
+Therefore, the four groups of my map are:
+```
+Group 1: provinces with less than 1.6655% of its population as Christian
+Group 2: provinces with between 1.6655% and 2.7265% of its population as Christian
+Group 3: provinces with between 2.7265% and 16.4778% of its population as Christian
+Group 4: provinces with more than 16.4778% of its population as Christian
+```
+
+Accordingly, I have created a linear scale of colors each of which correspond to each group. Scale is a convenient way in D3 to map abstract data into visualization. Before D3 v.5, a linear scale is defined as d3.scale.linear() such as in my reference [Basic US State map](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) by Michelle Chandra. For D3 v.5, however, a linear scale is defined using `d3.scleLinear()`. This [github page](https://github.com/d3/d3-scale#linear-scales) offers a good introduction into what scale is and how to use them in D3.
+
+Finally, the percentage of Christian population was referred from the dictionary that I created in the previous step. I set the style of `fill` as a function such that the percentage of Christian is gotten by setting the dictionary key as `properties.name_id` of each feature, which is then used to determine the color of each province accordingly. 
+
+**b. Set interactive tooltip**
+
+For each province feature, I also included an interacative tooltip that shows the name and the exact percentage of Christian population of each province. To do so, I added a tooltip `div` element to `<body>`, set the corresponding text up with `mouseover` activities and close it when mouse is out. The interactive tooltip was made possible thanks to the tutorial [Adding tooltips to a d3.js graph](http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html) and [Basic US State map](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) by Michelle Chandra.
+
+Here is the corresponding Javascript code:
+
+```
+	// Append Div for tooltip to SVG
+	// tooltip is possible thanks to: http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922 and http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+        var div = d3.select("body")
+		.append("div")   
+    		.attr("class", "tooltip")               
+    		.style("opacity", 0);
+	
+	// Define linear scale for output
+        var color = d3.scaleLinear()
+		.domain([0,1,2,3])
+		.range(["rgb(255,225,225)","rgb(255,190,190)","rgb(255,150,150)","rgb(255,100,100)"]);
+			
+	Promise.all([indonesia]).then(function(values){  
+
+		// draw map
+		svg.selectAll("path")
+			.data(values[0].features)
+			.enter()
+			.append("path")
+			.attr("class","indonesia")
+			.style("stroke", "white")
+			.style("fill", function(d, i){
+				//set the province path based on percentage of Christian population
+				var name = d.properties.name_id;
+				if (christian_dict[name] < 0.016655){
+					return color(0)
+				} else if (christian_dict[name] < 0.027265){
+					return color(1)
+				} else if (christian_dict[name] < 0.164778) {
+					return color(2)
+				} else{
+					return color(3)
+				};
+			})
+			.attr("d", path)
+			.on("mouseover", function(d, i) {
+				div.transition()        
+					.duration(200)      
+					.style("opacity", .9); 
+						
+				//set specific text to the tooltip
+				div.text("Provinsi: " + d.properties.name_id + "\n" + "Persentase: " + Math.round(christian_dict[d.properties.name_id] * 10000) / 100 + "%")
+					.style("left", (d3.event.pageX) + "px")     
+					.style("top", (d3.event.pageY - 28) + "px"); 
+				})
+			.on("mouseout", function(d, i) {
+				div.transition()        
+					.duration(500)      
+					.style("opacity", 0);
+			})
+```
+
+Finally, I updated the `.css` file for the added .html elements. One specific step was that I lightened the province color on mouse hover. This feature is very important because Indonesian is an archipelago country and multiple provinces consist several islands that are quite hard to tell by simply looking at my map. With this feature, the user will know the specific size of each province more easily. I learned about this possibility thanks to [Basic US State map](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) by Michelle Chandra. 
+
+```
+/* Style for main map */
+.indonesia {
+    fill: #f0e4dd;
+    stroke: #e0cabc;
+    stroke-width: 0.5;
+	fill-opacity = 0.5;
+}
+
+/* On mouse hover, lighten province color */
+/* Reference: http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922 */
+.indonesia:hover {
+	fill-opacity: .7;
+}
+
+
+/* Style for Custom Tooltip */
+div.tooltip {   
+ 	position: absolute;           
+	text-align:center;           
+	width: 250px;                  
+	height: 28px;                 
+	padding: 2px;             
+	font: 12px sans-serif;        
+	background: lightsteelblue;
+	white-space: pre; 
+	border: 0px;      
+	border-radius: 8px;           
+	pointer-events: none;         
+}
+```
+
+#### 4. draw the labels 
+
+After writing code that draws the map, I worked on the part of the code that appends the labels of each province in `Promise.all()` function. I appended the text features to `svg` and set the text as the Bahasa Indonesia name for each province feature. For two specific provinces, Daerah Khusus Ibukota Jakarta and Bangka Belitung, I have simplified their names to make my map more readable. I then set the `x` and `y` coordinates of each text based on `properties.longitude` and `d.properties.latitude` values stored for each province feature. I learned how to do this from this tutorial: [Making a Map in D3.js v.5](http://datawanderings.com/2018/10/28/making-a-map-in-d3-js-v-5/).
+
+```
+		// add labels
+		svg.selectAll("text")
+			.data(values[0].features)
+			.enter()
+			.append("text")
+			.attr("class","labels")
+			.text(function(d) {
+				if (d.properties.name_id == "Daerah Khusus Ibukota Jakarta"){
+					return "Jakarta";
+				} else if (d.properties.name_id == "Kepulauan Bangka Belitung") {
+					return "Bangka Belitung";
+				}
+				else{
+					return d.properties.name_id;
+				}
+			})
+			.attr("x", function(d) {
+				//move each text feature around to better fit the map
+				if (d.properties.name_id == "Daerah Khusus Ibukota Jakarta"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 15;
+				} else if (d.properties.name_id == "Bali"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 5;
+				} else if (d.properties.name_id == "Maluku" || d.properties.name_id == "Riau" || d.properties.name_id == "Aceh" || d.properties.name_id == "Nusa Tenggara Barat" || d.properties.name_id == "Nusa Tenggara Timur"){
+					return projection([d.properties.longitude, d.properties.latitude])[0];
+				} else if (d.properties.name_id == "Maluku Utara"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] + 30;
+				} else if (d.properties.name_id == "Kepulauan Bangka Belitung"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 30;
+				} else if (d.properties.name_id == "Sulawesi Tengah"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] + 5;
+				} else if (d.properties.name_id == "Sumatera Barat"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 55;
+				} else if (d.properties.name_id == "Gorontalo"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 25;
+				} else if (d.properties.name_id == "Kalimantan Tengah" || d.properties.name_id == "Nusa Tenggara Barat"){
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 45;
+				} else {
+					return projection([d.properties.longitude, d.properties.latitude])[0] - 35;
+				}
+			})
+			.attr("y", function(d) {
+				if (d.properties.name_id == "Daerah Khusus Ibukota Jakarta"){
+					return projection([d.properties.longitude, d.properties.latitude])[1];
+				} else if (d.properties.name_id == "Bali") {
+					return projection([d.properties.longitude, d.properties.latitude])[1] + 5;
+				} else if (d.properties.name_id == "Nusa Tenggara Timur" || d.properties.name_id == "Sulawesi Tenggara"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] + 25;
+				} else if (d.properties.name_id == "Maluku"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] - 100;
+				} else if (d.properties.name_id == "Maluku Utara"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] - 70;
+				} else if (d.properties.name_id == "Kepulauan Bangka Belitung" || d.properties.name_id == "Kepulauan Riau"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] - 20;
+				} else if (d.properties.name_id == "Sulawesi Barat"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] - 10;
+				} else if (d.properties.name_id == "Gorontalo"){
+					return projection([d.properties.longitude, d.properties.latitude])[1] + 5;
+				} else {
+					return projection([d.properties.longitude, d.properties.latitude])[1] + 10;
+				}
+			});
+```
+
+I also updated the `.css` file to show the change:
+
+```
+.labels {
+	font-family: serif;
+	font-size: 10px;
+	font-weight: bold;
+	fill: black;
+	fill-opacity: 1;
+}
+```
+
+#### 5.Create a legend and title
+Finally, I appeneded a new svg each for my legend and title. The code for my legend is based on and modified from Basic US State map](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) by Michelle Chandra and [Donut Multiples](https://bl.ocks.org/mbostock/3888852) by Mike Bostock.
+
+```
+	//Create a Title for my map
+	var title = d3.select("body").append("svg")
+		.attr("class", "title")
+		.attr("width", 1000)
+		.attr("height", 100)
+		.append("text")
+		.attr("x", 0)
+		.attr("y", 50)
+		.style("font-size", "35px")
+		.text("Peta persebaran Kristen di Indonesia berdasarkan sensus tahun 2010");
+			
+	// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852 and http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
+	var legend = d3.select("body").append("svg")
+     	.attr("class", "legend")
+   		.attr("width", 200)
+   		.attr("height", 200)
+		.selectAll("g")
+		.data(color.domain().slice().reverse())
+   		.enter()
+   		.append("g")
+		.style("background","yellow")
+     		.attr("transform", function(d, i) { 
+				return "translate(0," + i * 30 + ")" 
+		});
+			
+	legend.append("rect")
+		.attr("width", 28)
+		.attr("height", 28)
+		.style("fill", color);
+
+	legend.append("text")
+		.data(legendText)
+		.attr("x", 34)
+		.attr("y", 9)
+		.attr("dy", ".55em")
+		.text(function(d) { return d; });
+```
+
+Finally, I updated the corresponding .css file:
+```
+.title {
+	position:absolute;
+	left:700px;
+	top:50px;
+}
+
+.legend {
+	position:absolute;
+	left:100px;
+	top:850px;
+}
+```
