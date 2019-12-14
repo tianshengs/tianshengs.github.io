@@ -368,4 +368,4 @@ Finally, I updated the corresponding `.css` file:
 ```
 
 ## Result
-[Here](Plots/test.html) is my result map and corresponding [css file](Plots/map.css). 
+[Here](D3/test.html) is my result map and corresponding [css file](D3/map.css). 
