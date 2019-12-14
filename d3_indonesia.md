@@ -1,1 +1,10 @@
-d3
+# Christianity in Indonesia: A D3.js visualization
+
+## Introduction
+With the advance of open source technology, the discipline of cartography has also been rapidly developing and changing. For [Project 3](DarAnalysis.md), for example, I created a [Leaflet map](dsmmap/index.html) to visualize the number of hotels in each subwards of Dar es Salaam, Tanzania and the number of restaurants each hotel is access to within 500 meters. While geographers can use QGIS to easily create choropleth maps, such web-based maps can show different levels of details and information with interactions, custom tooltips and Zoom that traditional maps are not able to show. Besides Leaflet, D3.js is a powerful open source Javascript library that can also be used to create interactive maps. For this project, I self-taught how to create an interactive map of the percentage of Christian population in each Indonesian province using the D3.js library. 
+
+## Study Area
+![sumatra-toba-02](https://user-images.githubusercontent.com/25497706/70854298-cef80380-1e87-11ea-8c08-d9c4785ec709.jpg)
+The Toba Lake, where the Christian Batak people live
+
+With an area of over 1.9 million square kilometers and a population of over 267 million, Indonesia is the largest country in Southeast Asia and the fourth most populated country in the world. With 88% of the population Muslims, Indonsia also has the world's largest Muslim community. However, Christianity, the second largest religion of the country, also played an important role in Indonesia. Moreover, as a country with a variety of different ethnic groups, religious belief, such as Christianity, is closely tied to each ethnic group's cultural identity. Certain ethnic groups such as the Toraja people in Sulawesi and the Toba Batak people in Northern Sumatra remain Chirstians in the seas of an Islam majority. Therefore, an understanding of the distribution of Christianity population can be important for us to learn about the compositions and regional variances of Indonesian society. 
