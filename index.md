@@ -25,3 +25,6 @@ I tried to replicate the analysis of Malawi vulnerability of Malcomb et al.(2014
 
 ## [Activity 5](twitter_analysis.md): Sharpie versus Storm Surge in the Twittersphere of Hurricane Dorian
 I conducted an analysis of the twitter activity during Hurrican Dorian to identify and map potential geographic clustering and hotspots of Twitter activity and think about whether the real hurricane path or President Trump's fake sharpie maps had driven more Twitter activity.
+
+## [Activity 6]:Christianity in Indonesia: A D3.js visualization
+I learned how to make an interactive visualization using D3.js library and made a map showing the percentage of Christian people in each Indonesian province.
