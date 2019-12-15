@@ -361,7 +361,7 @@ Finally, I updated the corresponding `.css` file:
 ```
 .title {
 	position:absolute;
-	left:600px;
+	left:500px;
 	top:50px;
 }
 
