@@ -320,7 +320,7 @@ Finally, I appeneded a new svg each each for my legend and title. The code for m
 	//Create a Title for my map
 	var title = d3.select("body").append("svg")
 		.attr("class", "title")
-		.attr("width", 1000)
+		.attr("width", 1200)
 		.attr("height", 100)
 		.append("text")
 		.attr("x", 0)
@@ -361,7 +361,7 @@ Finally, I updated the corresponding `.css` file:
 ```
 .title {
 	position:absolute;
-	left:700px;
+	left:600px;
 	top:50px;
 }
 
