@@ -331,7 +331,7 @@ Finally, I appeneded a new svg each each for my legend and title. The code for m
 	// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852 and http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
 	var legend = d3.select("body").append("svg")
      	.attr("class", "legend")
-   		.attr("width", 200)
+   		.attr("width", 300)
    		.attr("height", 200)
 		.selectAll("g")
 		.data(color.domain().slice().reverse())
