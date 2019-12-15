@@ -374,8 +374,7 @@ Finally, I updated the corresponding `.css` file:
 
 ## Result
 
-![baliem_valley](https://user-images.githubusercontent.com/25497706/70858057-261dc880-1ec8-11ea-9983-4732129fd216.jpg)
-
+![indonesia-west-papua-baliem-valley](https://user-images.githubusercontent.com/25497706/70858090-c542c000-1ec8-11ea-8121-314a2940d217.jpg)
 Baliem Valley, the homeland of Christian Dani people in Papua Province, Indonesia
 
 [Here](D3/test.html) is my result map and corresponding [css file](D3/map.css).
