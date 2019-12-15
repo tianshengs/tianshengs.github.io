@@ -368,7 +368,7 @@ Finally, I updated the corresponding `.css` file:
 .legend {
 	position:absolute;
 	left:100px;
-	top:850px;
+	top:750px;
 }
 ```
 
